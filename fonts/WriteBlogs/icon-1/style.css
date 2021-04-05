@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?j68zw9');
+  src:  url('icomoon.eot?j68zw9#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?j68zw9') format('truetype'),
+    url('icomoon.woff?j68zw9') format('woff'),
+    url('icomoon.svg?j68zw9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-film:before {
+  content: "\e900";
+}
+.icon-wrap_text:before {
+  content: "\e901";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-image:before {
+  content: "\f03e";
+}
+.icon-photo:before {
+  content: "\f03e";
+}
+.icon-picture-o:before {
+  content: "\f03e";
+}
+.icon-floppy-o:before {
+  content: "\f0c7";
+}
+.icon-save:before {
+  content: "\f0c7";
+}
+.icon-list-numbered:before {
+  content: "\e9b9";
+}
+.icon-list:before {
+  content: "\e9ba";
+}
+.icon-list2:before {
+  content: "\e9bb";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-text-height:before {
+  content: "\ea5f";
+}
+.icon-text-width:before {
+  content: "\ea60";
+}
+.icon-font-size:before {
+  content: "\ea61";
+}
+.icon-bold:before {
+  content: "\ea62";
+}
+.icon-underline:before {
+  content: "\ea63";
+}
+.icon-italic:before {
+  content: "\ea64";
+}
+.icon-strikethrough:before {
+  content: "\ea65";
+}
+.icon-superscript2:before {
+  content: "\ea6b";
+}
+.icon-subscript2:before {
+  content: "\ea6c";
+}
+.icon-paragraph-left:before {
+  content: "\ea77";
+}
+.icon-paragraph-center:before {
+  content: "\ea78";
+}
+.icon-paragraph-right:before {
+  content: "\ea79";
+}
+.icon-paragraph-justify:before {
+  content: "\ea7a";
+}
+.icon-embed2:before {
+  content: "\ea80";
+}

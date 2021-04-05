@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>发布博客最后操作</title>
+		<link rel="stylesheet" type="text/css" href="../css/post_blog_last_operation.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/issue_blogs_public_style.css"/>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/FlexBug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public_function.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p id="akebuss-text">阿克布斯博客</p>
+		<div id="choose-skin"><!-- 选择皮肤 -->
+			<p class="choose-skin-headline">请选择您发布博客的皮肤:</p>
+			<ul id="skin-list">
+				<li>
+					<div id="current_choose_skin-shade">
+						<img class="current_choose_skin" src="../image/post_blog_last_operation/ok.png" >
+					</div>
+					<div class="skin-bg"></div>
+					<p class="skin-des">默认</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">少女拼接</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">暮光森林</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">代码雨</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">极简白</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">星空</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">纹路</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">热力橙</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">活力蓝</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">简约</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">大理石纹路</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">朴素蓝</p>
+				</li>
+				<li>
+					<div class="skin-bg"></div>
+					<p class="skin-des">朴素黑</p>
+				</li>
+			</ul>
+		</div>
+		<!-- <div id="preview-wrapper">
+			<p class="choose-skin-headline">预览内容:</p>
+			<div id="edit-page">
+				
+			</div>
+		</div> -->
+		<p id="sure-issue-wrapper">
+			<span id="sure-issue">确定发布</span>
+		</p>
+		<div id="upload-interface"><!-- 上传界面 -->
+			<div class="uploading-wrapper">
+				<div class="uploading-status uploading-successful">
+					<img src="../image/post_blog_last_operation/ok.png">
+					<p class="uploading-successful-text">发布成功</p>
+				</div>
+				<div class="uploading-status uploading-successful">
+					<img src="../image/safety_detection/submit_defeated.png">
+					<p class="uploading-successful-text">发布失败,网络中断。</p>
+				</div>
+				<div class="uploading-schedule"><!-- 进度 -->
+					<p class="current-schedule"></p>
+				</div>
+				<div class="uploading-schedule-text">
+					<p class="schedule-text">正在发表</p>
+					<div class="dot-loading">
+						<span>.</span>
+						<span>.</span>
+						<span>.</span>
+					</div>
+					<p class="schedule-num">50%</p>
+				</div>
+				<p id="cancel-uploading-wrapper"><span id="cancel-uploading">取消发表</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/post_blog_last_operation.js" type="text/javascript" charset="utf-8"></script>

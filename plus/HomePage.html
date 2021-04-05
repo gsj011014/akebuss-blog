@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>博客主页</title>
+		<link rel="stylesheet" type="text/css" href="../fonts/HomePage/HomePage-IconFont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/HomePage.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ball-triangle-path.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/page-headline.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public-animation.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/public_icon/ok-icon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pop-up-windows-public-fun.css"/>
+		<script src="../js/FlexBug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/page-headline.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public-animation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pop-up-windows-public-fun.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header><!-- 头部 -->
+			<div class="header-wrapper header-wrapper-pc"><!-- pc端顶部导航 -->
+				<span class="header-wrapper-pc-child blogs-name">博客</span><!-- 博客名称 -->
+				<span class="header-wrapper-pc-child blogs-search-wrapper">
+					<input type="text" class="search-keyword" value="" placeholder="请输入搜索关键字" />
+					<span class="icon-search"></span>
+				</span>
+				<span class="header-wrapper-pc-child blogs-infor">
+					<div class="blogs-infor-child write-blogs" onclick="location.href = 'WriteBlogs.html'"><!-- 写博客 -->
+						<span class="icon-pencil"></span>
+						<span>写博客</span>
+					</div>
+					<div class="blogs-infor-child hint list-wrapper"><!-- 提示 -->
+						<span class="icon-bell color-change-white">
+							<span class="new-information"></span><!-- 新通知提示 -->
+						</span>
+						<ul>
+							<li><span class="icon-bullhorn icon"></span><span>公告</span></li>
+							<li onclick="open_url('FunctionalBlock.html','评论')"><span class="icon-message icon"></span><span>评论</span></li>
+							<li onclick="open_url('FunctionalBlock.html','关注')"><span class="icon-plus icon"></span><span>关注</span></li>
+							<li onclick="open_url('FunctionalBlock.html','点赞')"><span class="icon-like icon"></span><span>点赞</span></li>
+							<li onclick="open_url('FunctionalBlock.html','收藏')"><span class="icon-heart icon"></span><span>收藏</span></li>
+							<li onclick="open_url('FunctionalBlock.html','私信')"><span class="icon-envelope-o icon"></span><span>私信</span></li>
+							<li onclick="open_url('FunctionalBlock.html','回答')"><span class="icon-forum icon"></span><span>回答</span></li>
+							<li onclick="open_url('FunctionalBlock.html','系统通知')"><span class="icon-info icon"></span><span>系统通知</span></li>
+							<li onclick="open_url('FunctionalBlock.html','消息设置')"><span class="icon-cogs icon"></span><span>消息设置</span></li>
+						</ul>
+					</div>
+					<div class="user-information list-wrapper"><!-- 用户信息 -->
+						<div class="user-information-fun">
+							<span class="user-head-portrait"></span><!-- 用户头像 -->
+							<span class="user-head-name color-change-white">谷世杰</span>
+							<span class="icon-sort-desc color-change-white"></span>
+							<ul class="user-information-list"><!-- 用户信息列表 -->
+								<li onclick="open_url('PersonalCenter.html','个人中心')"><span class="icon-user icon"></span><span>个人中心</span></li>
+								<li onclick="open_url('PersonalCenter.html','我的博客')"><span class="icon-notebook icon"></span><span>我的博客</span></li>
+								<li onclick="open_url('PersonalCenter.html','我的收藏')"><span class="icon-bookmark icon"></span><span>我的收藏</span></li>
+								<li onclick="open_url('PersonalCenter.html','切换账号')"><span class="icon-user-circle-o icon"></span><span>切换账号</span></li>
+								<li><span class="icon-exit icon" style="top: 2px;left: 2px;"></span><span>退出登录</span></li>
+							</ul>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div class="header-wrapper header-wrapper-mobile"><!-- 顶部包装 移动端-->
+				<span class="header-wrapper-pc-child blogs-name">博客</span><!-- 博客名称 -->
+				<span class="header-wrapper-pc-child blogs-search-wrapper">
+					<input type="text" class="search-keyword" value="" placeholder="请输入搜索关键字" />
+					<span class="icon-search"></span>
+				</span>
+				<span class="header-wrapper-pc-child blogs-infor">
+					<span class="icon-menu"></span>
+					<p class="user-head-portrait"></p><!-- 用户头像 -->
+				</span>
+			</div>
+			<div class="mobile-list" id="mobile-list"><!-- 移动端列表 -->
+				<ul>
+					<li onclick="location.href = 'WriteBlogs.html'"><span class="icon-pencil"></span><span>写博客</span></li>
+					<li><span class="icon-bullhorn icon"></span><span>公告</span></li>
+					<li onclick="open_url('FunctionalBlock.html','评论')"><span class="icon-message icon"></span><span>评论</span></li>
+					<li onclick="open_url('FunctionalBlock.html','关注')"><span class="icon-plus icon"></span><span>关注</span></li>
+					<li onclick="open_url('FunctionalBlock.html','点赞')"><span class="icon-like icon"></span><span>点赞</span></li>
+					<li onclick="open_url('FunctionalBlock.html','收藏')"><span class="icon-heart icon"></span><span>收藏</span></li>
+					<li onclick="open_url('FunctionalBlock.html','私信')"><span class="icon-envelope-o icon"></span><span>私信</span></li>
+					<li onclick="open_url('FunctionalBlock.html','回答')"><span class="icon-forum icon"></span><span>回答</span></li>
+					<li onclick="open_url('FunctionalBlock.html','系统通知')"><span class="icon-info icon"></span><span>系统通知</span></li>
+					<li onclick="open_url('FunctionalBlock.html','消息设置')"><span class="icon-cogs icon"></span><span>消息设置</span></li>
+					<li onclick="open_url('PersonalCenter.html','个人中心')"><span class="icon-user icon"></span><span>个人中心</span></li>
+					<li onclick="open_url('PersonalCenter.html','我的博客')"><span class="icon-notebook icon"></span><span>我的博客</span></li>
+					<li onclick="open_url('PersonalCenter.html','我的收藏')"><span class="icon-bookmark icon" style="margin-left: 10px;"></span><span>我的收藏</span></li>
+					<li onclick="open_url('PersonalCenter.html','切换账号')"><span class="icon-user-circle-o icon"></span><span>切换账号</span></li>
+					<li><span class="icon-exit icon" style="position: relative;left: 2px;"></span><span>退出登录</span></li>
+				</ul>
+			</div>
+		</header>
+		<div class="bottom-wrapper" id="bottom-wrapper"><!-- 底部内容 -->
+			<ul id="issue-blogs"><!-- 发布博客内容 -->
+				<li onclick="location.href='Blog_for_page.html'">
+					<div class="issue-Wrapper">
+						<div class="issue-content-headline"><!-- 发布内容的标题 -->
+							<span class="recommend-text">荐</span>
+							<span class="issue-content-headline-text">大学四年学，这些私藏的实用工具/学习网站我贡献出来了。</span>
+							<!-- <span class="icon-clear" class="icon-clear"></span> -->
+						</div>
+						<div class="issue-content-describe"><!-- 发布内容描述 -->
+							<div class="issue-content-image"><!-- 发布内容的图片 -->
+								
+							</div>
+							<div class="issue-content-text"><!-- 发布内容的文字 -->
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+							</div>
+						</div>
+						<div class="issue-content-information"><!-- 发布内容的信息 -->
+							<p class="issue-user-information"><!-- 发布人的信息 -->
+								<span class="issue-user-head-portrait"></span><!-- 发布人头像 -->
+								<span class="issue-user-name">谷世杰</span><!-- 发布人名称 -->
+							</p>
+							<div class="icon-dynamic-state-infor">
+								<p class="give-like click-praise-wrapper article-content-thumb-up"><!-- 点赞 -->
+									<span class="icon-like icon-click-praise icon-margin-right icon-thumbs-o-up"></span>
+									<span class="like-number isuse-number click-praise-count great-number">1</span>
+									<!-- <a class="like-right-line like-line"></a> -->
+									<!-- <a class="like-left-line like-line"></a> -->
+								</p>
+								<p class="heart collect-wrapper"><!-- 收藏 -->
+									<span class="icon-star-full icon-collect icon-margin-right"></span>
+									<span class="heart-number isuse-number icon-collect-count">20</span>
+								</p>
+								<p class="comment"><!-- 评论 -->
+									<span class="icon-message icon-margin-right"></span>
+									<span class="comment-number isuse-number">20</span>
+								</p>
+								<p class="issue-content-page-view"><!-- 发布内容浏览量-->
+									<span class="icon-eye icon-margin-right"></span>
+									<span class="issue-content-page-view-number isuse-number">1921</span>
+								</p>
+								<p class="issue-content-time"><!-- 发布内容时间-->
+									<span>发布时间：</span>
+									<span class="issue-content-time-text">2020-01-31</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li onclick="location.href='Blog_for_page.html'">
+					<div class="issue-Wrapper">
+						<div class="issue-content-headline"><!-- 发布内容的标题 -->
+							<span class="recommend-text">荐</span>
+							<span class="issue-content-headline-text">大学四年学，这些私藏的实用工具/学习网站我贡献出来了。</span>
+							<!-- <span class="icon-clear" class="icon-clear"></span> -->
+						</div>
+						<div class="issue-content-describe"><!-- 发布内容描述 -->
+							<div class="issue-content-image"><!-- 发布内容的图片 -->
+								
+							</div>
+							<div class="issue-content-text"><!-- 发布内容的文字 -->
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+							</div>
+						</div>
+						<div class="issue-content-information"><!-- 发布内容的信息 -->
+							<p class="issue-user-information"><!-- 发布人的信息 -->
+								<span class="issue-user-head-portrait"></span><!-- 发布人头像 -->
+								<span class="issue-user-name">谷世杰</span><!-- 发布人名称 -->
+							</p>
+							<div class="icon-dynamic-state-infor">
+								<p class="give-like click-praise-wrapper"><!-- 点赞 -->
+									<span class="icon-like icon-click-praise icon-margin-right"></span>
+									<span class="like-number isuse-number click-praise-count">1</span>
+									<!-- <a class="like-right-line like-line"></a> -->
+									<!-- <a class="like-left-line like-line"></a> -->
+								</p>
+								<p class="heart collect-wrapper"><!-- 收藏 -->
+									<span class="icon-star-full icon-collect icon-margin-right"></span>
+									<span class="heart-number isuse-number icon-collect-count">20</span>
+								</p>
+								<p class="comment"><!-- 评论 -->
+									<span class="icon-message icon-margin-right"></span>
+									<span class="comment-number isuse-number">20</span>
+								</p>
+								<p class="issue-content-page-view"><!-- 发布内容浏览量-->
+									<span class="icon-eye icon-margin-right"></span>
+									<span class="issue-content-page-view-number isuse-number">1921</span>
+								</p>
+								<p class="issue-content-time"><!-- 发布内容时间-->
+									<span>发布时间：</span>
+									<span class="issue-content-time-text">2020-01-31</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li onclick="location.href='Blog_for_page.html'">
+					<div class="issue-Wrapper">
+						<div class="issue-content-headline"><!-- 发布内容的标题 -->
+							<span class="recommend-text">荐</span>
+							<span class="issue-content-headline-text">大学四年学，这些私藏的实用工具/学习网站我贡献出来了。</span>
+							<!-- <span class="icon-clear" class="icon-clear"></span> -->
+						</div>
+						<div class="issue-content-describe"><!-- 发布内容描述 -->
+							<div class="issue-content-image"><!-- 发布内容的图片 -->
+								
+							</div>
+							<div class="issue-content-text"><!-- 发布内容的文字 -->
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+							</div>
+						</div>
+						<div class="issue-content-information"><!-- 发布内容的信息 -->
+							<p class="issue-user-information"><!-- 发布人的信息 -->
+								<span class="issue-user-head-portrait"></span><!-- 发布人头像 -->
+								<span class="issue-user-name">谷世杰</span><!-- 发布人名称 -->
+							</p>
+							<div class="icon-dynamic-state-infor">
+								<p class="give-like click-praise-wrapper"><!-- 点赞 -->
+									<span class="icon-like icon-click-praise icon-margin-right"></span>
+									<span class="like-number isuse-number click-praise-count">1</span>
+									<!-- <a class="like-right-line like-line"></a> -->
+									<!-- <a class="like-left-line like-line"></a> -->
+								</p>
+								<p class="heart collect-wrapper"><!-- 收藏 -->
+									<span class="icon-star-full icon-collect icon-margin-right"></span>
+									<span class="heart-number isuse-number icon-collect-count">20</span>
+								</p>
+								<p class="comment"><!-- 评论 -->
+									<span class="icon-message icon-margin-right"></span>
+									<span class="comment-number isuse-number">20</span>
+								</p>
+								<p class="issue-content-page-view"><!-- 发布内容浏览量-->
+									<span class="icon-eye icon-margin-right"></span>
+									<span class="issue-content-page-view-number isuse-number">1921</span>
+								</p>
+								<p class="issue-content-time"><!-- 发布内容时间-->
+									<span>发布时间：</span>
+									<span class="issue-content-time-text">2020-01-31</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li onclick="location.href='Blog_for_page.html'">
+					<div class="issue-Wrapper">
+						<div class="issue-content-headline"><!-- 发布内容的标题 -->
+							<span class="recommend-text">荐</span>
+							<span class="issue-content-headline-text">大学四年学，这些私藏的实用工具/学习网站我贡献出来了。</span>
+							<!-- <span class="icon-clear" class="icon-clear"></span> -->
+						</div>
+						<div class="issue-content-describe"><!-- 发布内容描述 -->
+							<div class="issue-content-image"><!-- 发布内容的图片 -->
+								
+							</div>
+							<div class="issue-content-text"><!-- 发布内容的文字 -->
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+								通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的通过学习此课程，可以掌握Python的语法规则、常见通用库的使用，并在老师的带领下做出自己的智能语音机器人。在积累了一定的语言基础上具备成为专业Python工程师的能力。并可以深入全面学习Python爬虫及Flask的
+							</div>
+						</div>
+						<div class="issue-content-information"><!-- 发布内容的信息 -->
+							<p class="issue-user-information"><!-- 发布人的信息 -->
+								<span class="issue-user-head-portrait"></span><!-- 发布人头像 -->
+								<span class="issue-user-name">谷世杰</span><!-- 发布人名称 -->
+							</p>
+							<div class="icon-dynamic-state-infor">
+								<p class="give-like click-praise-wrapper"><!-- 点赞 -->
+									<span class="icon-like icon-click-praise icon-margin-right"></span>
+									<span class="like-number isuse-number click-praise-count">1</span>
+									<!-- <a class="like-right-line like-line"></a> -->
+									<!-- <a class="like-left-line like-line"></a> -->
+								</p>
+								<p class="heart collect-wrapper"><!-- 收藏 -->
+									<span class="icon-star-full icon-collect icon-margin-right"></span>
+									<span class="heart-number isuse-number icon-collect-count">20</span>
+								</p>
+								<p class="comment"><!-- 评论 -->
+									<span class="icon-message icon-margin-right"></span>
+									<span class="comment-number isuse-number">20</span>
+								</p>
+								<p class="issue-content-page-view"><!-- 发布内容浏览量-->
+									<span class="icon-eye icon-margin-right"></span>
+									<span class="issue-content-page-view-number isuse-number">1921</span>
+								</p>
+								<p class="issue-content-time"><!-- 发布内容时间-->
+									<span>发布时间：</span>
+									<span class="issue-content-time-text">2020-01-31</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- <div class="blogs-loading">加载博客
+					<div class="loading-Wrapper">加载包装
+						<div class="item-loader-container loading-Wrapper-child">
+						    <div class="la-ball-triangle-path la-2x">
+						        <div></div>
+						        <div></div>
+						        <div></div>
+						    </div>
+						</div>
+						<span class="loading-the-hours loading-Wrapper-child">数据加载中...</span>
+					</div>
+					<span class="update-text">已为你更新10条内容</span>
+				</div> -->
+			</ul>
+		</div>
+	</body>
+</html>
+<script src="../js/HomePage.js" type="text/javascript" charset="utf-8"></script>

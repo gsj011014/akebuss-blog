@@ -1,0 +1,45 @@
+/* Loader Css */
+#loader_wrpper{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+	background: #fff;
+	transition: all 0.5s ease-in-out 0s;
+}
+.loader_style {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  animation: loader_style-ub06eb63b 1s ease infinite;
+  top: 50%;
+  margin: -50px auto 0; }
+
+@keyframes loader_style-ub06eb63b {
+  0%, 100% {
+    box-shadow: -13px 20px 0 #0052ec, 13px 20px 0 rgba(0, 82, 236, 0.2), 13px 46px 0 rgba(0, 82, 236, 0.2), -13px 46px 0 rgba(0, 82, 236, 0.2); }
+  25% {
+    box-shadow: -13px 20px 0 rgba(0, 82, 236, 0.2), 13px 20px 0 #0052ec, 13px 46px 0 rgba(0, 82, 236, 0.2), -13px 46px 0 rgba(0, 82, 236, 0.2); }
+  50% {
+    box-shadow: -13px 20px 0 rgba(0, 82, 236, 0.2), 13px 20px 0 rgba(0, 82, 236, 0.2), 13px 46px 0 #0052ec, -13px 46px 0 rgba(0, 82, 236, 0.2); }
+  75% {
+    box-shadow: -13px 20px 0 rgba(0, 82, 236, 0.2), 13px 20px 0 rgba(0, 82, 236, 0.2), 13px 46px 0 rgba(0, 82, 236, 0.2), -13px 46px 0 #0052ec; } }
+
+.width-45{
+width:45%;	
+}
+.width-40{
+	width:40%;	
+}
+.width-50{
+	width:50%;	
+}
+.height_wp{
+	height:338px;
+}
+.width-25{
+	width:25%;
+}
+

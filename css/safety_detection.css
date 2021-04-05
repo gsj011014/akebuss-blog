@@ -1,0 +1,176 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+html,
+body{
+	width: 100%;
+	height: 100%;
+	background-color: rgb(40,40,40);
+	user-select:none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	overflow: hidden;
+}
+#cloud-shield-system-text{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	font-family: 'cloud-shield-system-text';
+	margin: 30px 0px;
+	color: rgb(8,215,215);
+	letter-spacing: 2px;
+	position: relative;
+	z-index: 1000;
+}
+@font-face {
+  font-family: 'cloud-shield-system-text';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_i41ooa66c5h.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_i41ooa66c5h.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_i41ooa66c5h.woff2') format('woff2'),
+  url('//at.alicdn.com/t/webfont_i41ooa66c5h.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_i41ooa66c5h.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_i41ooa66c5h.svg#庞门正道标题体2') format('svg'); /* iOS 4.1- */
+}
+.detection-status-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.safety-detection-wrapper{
+	width: auto;
+	margin-top: 200px;
+}
+.safety-detection-wrapper .safety-detection-animtion{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	background-image: url(../image/safety_detection/intelligent_detection_security_check.gif);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.detection-text{
+	position: relative;
+	top: -155px;
+	width: 100%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	font-family: 'detection-text';
+}
+.detection-text .dot-loading{
+	margin-left: 5px;
+}
+.detection-text .dot-loading span{
+	font-weight: bold;
+	font-family: 'detection-text';
+	opacity: 0;
+}
+@font-face {
+  font-family: 'detection-text';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_yvxn8drwbo.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_yvxn8drwbo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_yvxn8drwbo.woff2') format('woff2'),
+  url('//at.alicdn.com/t/webfont_yvxn8drwbo.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_yvxn8drwbo.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_yvxn8drwbo.svg#Alibaba-PuHuiTi-Regular') format('svg'); /* iOS 4.1- */
+}
+.detection-hint-logo{
+	width: 100%;
+	display: none;
+	margin-top: 100px;
+}
+.detection-hint-logo .detection-bg{
+	width: 100px;
+	height: 100px;
+	background-image: url(../image/safety_detection/submit_successful.png);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+.detection-hint-logo .detection-text-child{
+	color: white;
+	font-family: 'detection-text';
+	margin-top: 20px;
+	text-align: center;
+}
+.detection-hint-logo .detection-defeated-text{
+	font-family: 'detection-text';
+}
+.detection-defeated .detection-defeated-bg{
+	background-image: url(../image/safety_detection/submit_defeated.png);
+}
+.detection-defeated .detection-defeated-text{
+	color: rgb(216,30,6);
+}
+@media screen and (min-width:568px) and (max-width:1024px) and (max-height:1024px){/* 平板电脑 手机横屏 */
+	#cloud-shield-system-text{
+		font-size: 30px;
+	}
+	.safety-detection-wrapper .safety-detection-animtion{
+		width: 350px;
+		height: 350px;
+	}
+	.detection-text{
+		position: relative;
+		top: -110px;
+		font-family: 'detection-text';
+		font-size: 16px;
+	}
+	.detection-text #dot-loading{
+		margin-left: 5px;
+	}
+	.detection-hint-logo{
+		width: 100%;
+	}
+	.detection-hint-logo .detection-bg{
+		width: 90px;
+		height: 90px;
+	}
+	.safety-detection-wrapper{
+		margin-top: 130px;
+	}
+}
+@media screen and (max-width:568px) and (max-height:1024px){/* 手机竖屏 */
+	.safety-detection-wrapper{
+		margin-top: 100px;
+	}
+	#cloud-shield-system-text{
+		font-size: 25px;
+		letter-spacing: 2px;
+		width: 96%;
+		margin: 30px auto;
+	}
+	.safety-detection-wrapper .safety-detection-animtion{
+		width: 300px;
+		height: 300px;
+	}
+	.detection-text{
+		position: relative;
+		top: -85px;
+		font-family: 'detection-text';
+		font-size: 14px;
+	}
+	.detection-text #dot-loading{
+		margin-left: 5px;
+	}
+	.detection-hint-logo{
+		width: 100%;
+	}
+	.detection-hint-logo .detection-bg{
+		width: 80px;
+		height: 80px;
+	}
+}

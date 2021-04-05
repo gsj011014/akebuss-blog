@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>博客注册页面</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<!-- <link rel="stylesheet" type="text/css" href="fonts/index/iconfont.css"></link> -->
+		<link rel="stylesheet" href="fonts/index/index-IconFont.css" />
+		<script src="js/FlexBug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p id="blogs-name">博客</p><!-- 博客名称 -->
+		<div class="login-wrapper"><!-- 登录包装 -->
+			<div class="login-top-headline"><!-- 登录标题 -->
+				<span class="login-text"><span>登录</span></span>
+				<span class="register-text"><span>注册</span></span>
+				<p class="bottom-line" id="bottom-line"></p><!-- 底部线条 -->
+			</div>
+			<div class="main">
+			<div class="logon"><!-- 登录内容 -->
+				<div class="logon-cen logon-child">
+					<div class="user-roomname-wrapper">
+						<div class="user-roomname-child">
+							<span class="icon-user" ></span>
+							<input type="text" name="" id="user" value="" placeholder="请输入用户名"/>
+						</div>
+						<p class="user-roomname-text" id="one"></p>
+					</div>
+					<div class="user-password-wrapper">
+						<div class="user-password-child">
+							<span class="icon-lock"></span>
+							<input type="password" name="" id="password" value=""  placeholder="请输入密码" />
+							<span id="eye">
+								<img class="eyes" src="image/login-page/yincang.png" /> 
+							</span>
+						</div>
+						<p class="user-password-text"></p>
+					</div>
+					<div class="user-log-wrapper">
+						<div class="user-log-child">
+							<input type="button" name="" id="log" value="登录" />
+						</div>
+						<p class="user-check">
+							<input type="checkbox" id="checkbox1" /><label for="checkbox1"  class="checkbox1">记住密码</label>
+							<input type="checkbox" id="checkbox2"/><label for="checkbox2"  class="checkbox2">自动登录</label>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="logins"><!-- 注册内容 -->
+				<div class="logins-cen logins-child">
+				<div class="user-nextname-wrapper">
+					<div class="user-nextname-child">
+						<span class="icon-user"></span>
+						<input type="text" name="" id="user-two" value="" placeholder="请设置用户名" />
+					</div>
+					<p class="user-nextname-text"></p>
+				</div>
+				<div class="user-roompassword-wrapper">
+					<div class="user-roompassword-child">
+						<span class="icon-lock"></span>
+						<input type="password" name="" id="password-two" value="" placeholder="请设置密码"/>
+						<span id="eye">
+							<img class="eyes" src="image/login-page/yincang.png" /> 
+						</span>
+					</div>
+					<p class="user-roompassword-text"></p>
+				</div>
+				<div class="user-nextpassword-wrapper">
+					<div class="user-nextpassword-child">
+						<span class="icon-lock"></span>
+						<input type="password" name="" id="password-three" value="" placeholder="再次确认密码" />
+						<span id="eye">
+							<img class="eyes" src="image/login-page/yincang.png" /> 
+						</span>
+					</div>
+					<p class="user-nextpassword-text"></p>
+				</div>
+				<div class="user-logtwo-wrapper">
+					<div class="user-logtwo-child">
+					<input type="button" name="" id="log-two" value="立即注册" />
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+			
+			
+			
+		</div>
+		<footer><!-- 底部信息 -->
+			<p>© 2020 博客版权所有 BETA 1.8 All Right Reserved. 联系我们 or Donate for servers,though</p>
+		</footer>
+	</body>
+</html>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>

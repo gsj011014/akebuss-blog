@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>编辑博客页面</title>
+		<link rel="stylesheet" type="text/css" href="../css/WriteBlogs.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/WriteBlogs/icon-1/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/WriteBlogs/icon-2/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/WriteBlogs/icon-3/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/WriteBlogs/tool-kit/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/colpick.css"/><!-- 颜色选择器 -->
+		<link rel="stylesheet" type="text/css" href="../css/loaderStyleStyle.css"/><!-- 页面打开加载页面 -->
+		<link rel="stylesheet" type="text/css" href="../css/pop-up-windows-public-fun.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/public_icon/ok-icon/style.css"/>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/FlexBug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/colpick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pop-up-windows-public-fun.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common_plug_in.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="loader_wrpper"><!-- 页面加载动画 -->
+			<div class="loader_style"></div>
+		</div>
+		<div id="image-viewer-bg"><!-- 图片查看 -->
+			<div id="image-viewer">
+				
+			</div>
+		</div>
+		<div class="insert-link-bg" id="insert-link-bg" unselectable="on"><!-- 插入超链接 -->
+			<div class="insert-link-wrapper"><!-- 插入链接包装 -->
+				<div class="insert-area" id="insert-link-area"><!-- 插入链接区域 -->
+					<div class="insert-link"><!-- 插入链接内容 -->
+						<p class="insert-link-headline">插入链接	<span class="icon-close" id="close-link-wrapper"></span></p>
+					</div>
+					<div class="insert-link-input-wrapper"><!-- 插入链接input输入框 -->
+						<div class="show-text"><!-- 显示的文本 -->
+							<p>显示文本</p>
+							<input type="text" id="show-text-input" value="" placeholder="请输入链接显示的文本"/>
+						</div>
+						<div class="open-url"><!-- 打开的地址 -->
+							<p>链接地址</p>
+							<input type="text" id="open-url-input" value="" placeholder="请输入链接打开的地址"/> 
+						</div>
+						<div class="isOpenNew-Page"><!-- 是否打开一个新页面 -->
+							<input type="checkbox" id="isNewOpenPage" value="" checked="checked"/>
+							<label for="isNewOpenPage">在新窗口打开</label>
+						</div>
+					</div>
+					<div class="insert-link-bottom"><!-- 插入链接底部 -->
+						<span id="insert-link-btn">插入链接</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="insert-file-area" id="insert-file-area"><!-- 插入文件区域 -->
+			<div class="insert-file"><!-- 插入文件 -->
+				<div class="insert-file-headline">
+					<span class="insert-file-headline-text">插入图片</span>
+					<span class="icon icon-close" title="关闭"></span>
+				</div>
+				<div class="insert-url-wrapper"><!-- 插入url包装 -->
+					<div class="insert-file-flex">
+						<span class="insert-file-name">图片URL：</span>
+						<input type="text" name="" id="file-url" value="" />
+					</div>
+					<div class="insert-file-flex choose-tab-wrapper">
+						<span class="insert-file-name" style="visibility: hidden;">图片URL：</span>
+						<p class="choose-tab">或选择<span>上传图片</span></p>
+					</div>
+					<div class="insert-file-bottom-btn">
+						<span class="cancel-insert-file">取消</span>
+						<span class="insert-sure" style="color: rgb(12,147,228);">插入</span>
+					</div>
+				</div>
+				<div class="insert-locality-file"><!-- 上传本地文件 -->
+					<div class="insert-locality-fil-btn-wrapper">
+						<span class="uploading-file">
+							<span>上传图片</span>
+							<input style="opacity: 0;display:none;" type="file" accept="image/gif,image/jpeg,image/png,image/tiff" name="" id="ChooseImageFile" value="" />
+							<input style="opacity: 0;display:none;" type="file" accept="video/3gpp,video/mpeg,video/mp4" name="" id="ChooseVideoFile" value="" />
+							<input style="opacity: 0;display:none;" type="file" accept="audio/3gpp,audio/ac3,audio/basic,audio/mpeg,audio/mp4,audio/ogg" name="" id="ChooseAudioFile" value="" />
+						</span>
+						<p class="uploading-file-state">或选择<span>图片链接</span></p>
+					</div>
+					<p class="des-uploading-file">支持.jpg .gif .png .jpeg .bmp .webp,大小不超过5M</p>
+				</div>
+			</div>
+		</div>
+		<header><!-- 顶部 -->
+			<div class="header-wrapper"><!-- 顶部内容包装 -->
+				<div class="home-btn" id="back-home-btn" title="回到主页" onclick="location.href = '../plus/HomePage.html'"><!-- 主页按钮 -->
+					<span class="icon-home"></span>
+				</div>
+				<div class="blogs-headline-write"><!-- 博客标题填写 -->
+					<input type="text" id="blogs-headline" value="欢迎使用阿克布斯-HyperSmartText编辑器" />
+					<div class="text-count"><!-- 文字数量 -->
+						<span id="change-text-count"></span>
+						<span>/</span>
+						<span id="max-text-count">100</span>
+					</div>
+				</div>
+				<div class="write-blogs-headline-right-wrapper">
+					<span id="save-draft" onclick="The_editing_zone_obj.SaveRichText();">保存草稿</span>
+					<span id="publish-article">发布文章</span>
+					<p class="user-head-portrait" title="个人中心" style="cursor: pointer;"></p><!-- 用户头像 -->
+				</div>
+			</div>
+		</header>
+		<div id="edit-tool" unselecable="on"><!-- 编辑工具 -->
+			<ul id="edit-tool-btn-wrapper">
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.add_bold();" title="加粗">
+					<span class="icon-bold edit-tool-sign"></span>
+					<span class="edit-tool-text">加粗</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.add_italic();" title="斜体">
+					<span class="icon-italic edit-tool-sign"></span>
+					<span class="edit-tool-text">斜体</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.add_underline();" title="下划线">
+					<span class="icon-underline edit-tool-sign" style="top:3px;"></span>
+					<span class="edit-tool-text">下划线</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.add_strikeThrough();" title="中划线">
+					<span class="icon-strikethrough edit-tool-sign" style="top:3px;"></span>
+					<span class="edit-tool-text">中划线</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.superscript();" title="上角标">
+					<span class="icon-superscript edit-tool-sign"></span>
+					<span class="edit-tool-text">上角标</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.subscript();" title="下角标">
+					<span class="icon-subscript edit-tool-sign"></span>
+					<span class="edit-tool-text">下角标</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.increase_fontSize();" title="文字增大">
+					<span class="edit-tool-sign icon-superscript2" ></span>
+					<span class="edit-tool-text">文字增大</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.decrease_fontSize();" title="文字减小">
+					<span class="edit-tool-sign icon-subscript2" ></span>
+					<span class="edit-tool-text">文字减小</span>
+				</li>
+				<li onclick="The_editing_zone_obj.insert_headline();" title="标题">
+					<span class="edit-tool-sign" >H</span>
+					<span class="edit-tool-text">标题</span>
+				</li>
+				<li id="hyper-link" title="超链接">
+					<span class="edit-tool-sign icon-link" ></span>
+					<span class="edit-tool-text">超链接</span>
+				</li>
+				<li id="add-code-block" title="代码块">
+					<span class="edit-tool-sign icon-embed2" ></span>
+					<span class="edit-tool-text">代码块</span>
+				</li>
+				<li title="引用" onclick="The_editing_zone_obj.insert_cite();">
+					<span class="edit-tool-sign icon-quote-left" ></span>
+					<span class="edit-tool-text">引用</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.text_justifyFull();" title="文本对齐">
+					<span class="edit-tool-sign icon-paragraph-justify" ></span>
+					<span class="edit-tool-text">文本对齐</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.text_leftAlign();" title="左对齐">
+					<span class="edit-tool-sign icon-paragraph-left" ></span>
+					<span class="edit-tool-text">左对齐</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.text_centerAlign();" title="居中对齐">
+					<span class="edit-tool-sign icon-paragraph-center" ></span>
+					<span class="edit-tool-text">居中对齐</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.text_rightAlign();" title="右对齐">
+					<span class="edit-tool-sign icon-paragraph-right" ></span>
+					<span class="edit-tool-text">右对齐</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.insert_ol();" title="有序列表">
+					<span class="edit-tool-sign icon-list-numbered" ></span>
+					<span class="edit-tool-text">有序列表</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.insert_ul();" title="无序列表">
+					<span class="edit-tool-sign icon-list" ></span>
+					<span class="edit-tool-text">无序列表</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.text_removeFormat();" title="去除所有样式">
+					<span class="edit-tool-sign icon-loop" ></span>
+					<span class="edit-tool-text">重置元素</span>
+				</li>
+				<li onclick="" id="color-picker-font" title="字体颜色">
+					<span class="edit-tool-sign icon-border_color" ></span>
+					<span class="edit-tool-text">字体颜色</span>
+				</li>
+				<li onclick="" id="color-picker-bg" title="背景颜色">
+					<span class="edit-tool-sign icon-format_color_fill" ></span>
+					<span class="edit-tool-text">背景颜色</span>
+				</li>
+				<li onclick="The_editing_zone_obj.RichTextExecCommand.insert_horizontalLine();" title="水平线">
+					<span class="edit-tool-sign icon-border-horizontal" ></span>
+					<span class="edit-tool-text">水平线</span>
+				</li>
+				<li onclick="InsertFile('图片')" title="图片">
+					<!-- <input style="opacity: 0;" type="file" accept="image/gif,image/jpeg,image/png,image/tiff" name="" id="ChooseImageFile" value="" /> -->
+					<span class="edit-tool-sign icon-image" ></span>
+					<span class="edit-tool-text">图片</span>
+				</li>
+				<li onclick="InsertFile('视频')" title="视频">
+					<!-- <input style="opacity: 0;" type="file" accept="video/3gpp,video/mpeg,video/mp4" name="" id="ChooseVideoFile" value="" /> -->
+					<span class="edit-tool-sign icon-film"></span>
+					<span class="edit-tool-text">视频</span>
+				</li>
+				<li onclick="InsertFile('音频')" title="音频">
+					<!-- <input style="opacity: 0;" type="file" accept="audio/3gpp,audio/ac3,audio/basic,audio/mpeg,audio/mp4,audio/ogg" name="" id="ChooseAudioFile" value="" /> -->
+					<span class="edit-tool-sign icon-applemusic" ></span>
+					<span class="edit-tool-text">音频</span>
+				</li>
+				<li title="撤销" onclick="The_editing_zone_obj.RichTextExecCommand.undo();">
+					<span class="edit-tool-sign icon-undo2" ></span>
+					<span class="edit-tool-text">撤销</span>
+				</li>
+				<li title="重做" onclick="The_editing_zone_obj.RichTextExecCommand.redo();">
+					<span class="edit-tool-sign icon-redo2" ></span>
+					<span class="edit-tool-text">重做</span>
+				</li>
+				<li title="一键清空" onclick="The_editing_zone_obj.A_key_to_empty();">
+					<span class="edit-tool-sign icon-trash-o"></span>
+					<span class="edit-tool-text">一键清空</span>
+				</li>
+				<li title="帮助" id="help-document-btn">
+					<span class="edit-tool-sign icon-question"></span>
+					<span class="edit-tool-text">帮助</span>
+				</li>
+			</ul>
+		</div>
+		<div id="help-document" unselectable="on"><!-- 帮助文档 -->
+			<div class="help-document-headline"><!-- 帮助文档头部 -->
+				<p class="help-text">帮助文档<span class="icon icon-close" title="关闭"></span></p>
+			</div>
+			<div class="help-document-bottom-wrapper"><!-- 帮助文档底部内容 -->
+				<div id="section-wrapper">
+					<div class="section-child"><!-- 模块一 -->
+						<p class="section-child-headline">快捷键</p>
+						<ul class="section-child-des"><!-- 功能描述 -->
+							<li>1、撤销：Ctrl/Command + Z</li>
+							<li>2、重做：Ctrl/Command + Y</li>
+							<li>3、加粗：Ctrl/Command + B</li>
+							<li>4、斜体：Ctrl/Command + I</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">标题</p>
+						<ul class="section-child-des">
+							<li>1、点击标题按钮可生成标题</li>
+							<li>2、可在标题上下换行处添加内容，不要随意删除上下换行格式。</li>
+							<li>3、选中标题内容，可以通过调节字号来设置标题的大小。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">下划线</p>
+						<ul class="section-child-des">
+							<li>选中或光标插入处可以给内容添加/删除下划线。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">中划线</p>
+						<ul class="section-child-des">
+							<li>选中或光标插入处可以给内容添加/删除中划线。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">上角标</p>
+						<ul class="section-child-des">
+							<li>选中可以给内容添加/删除上角标</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">下角标</p>
+						<ul class="section-child-des">
+							<li>选中可以给内容添加/删除下角标。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">文字增大</p>
+						<ul class="section-child-des">
+							<li>选中或光标插入处可以给文字增加字号。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">文字减小</p>
+						<ul class="section-child-des">
+							<li>选中或光标插入处可以给文字减小字号。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">标题</p>
+						<ul class="section-child-des">
+							<li>选中或光标插入处可以添加标题。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">超链接</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处可以添加超链接。</li>
+							<li>2、超链接格式支持http传输协议/https传输协议。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">代码块</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处可以添加代码块。</li>
+							<li>2、点击代码块中的，删除代码块可以执行删除整个代码块（暂不支持在元素尾部直接删除）。</li>
+							<li>3、当代码块中没有内容的时候，按下退格键/删除键可以删除整个代码块。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">引用</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处可以添加引用块。</li>
+							<li>2、点击引用中的，删除引用块可以执行删除整个引用（暂不支持在元素尾部直接删除）。</li>
+							<li>3、当引用中没有内容的时候，按下退格键/删除键可以删除整个引用。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">文本对齐</p>
+						<ul class="section-child-des">
+							<li>选中/光标插入处可以给内容添加文字对齐（默认对齐方式）。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">左对齐</p>
+						<ul class="section-child-des">
+							<li>选中/光标插入处可以给内容添加左对齐。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">居中对齐</p>
+						<ul class="section-child-des">
+							<li>选中/光标插入处可以给内容添加居中对齐。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">右对齐</p>
+						<ul class="section-child-des">
+							<li>选中/光标插入处可以给内容添加右对齐。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">有序列表</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处可以给内容添加/删除有序列表。</li>
+							<li>2、若下一段文字不再使用列表，连续按下两次回车便可取消。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">无序列表</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处可以给内容添加/删除无序列表。</li>
+							<li>2、若下一段文字不再使用列表，连续按下两次回车便可取消。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">重置元素</p>
+						<ul class="section-child-des">
+							<li>1、去除选中/光标插入处元素的所有样式。</li>
+							<li>2、标题内容不支持。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">字体颜色</p>
+						<ul class="section-child-des">
+							<li>给文字元素添加/修改字体颜色。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">背景颜色</p>
+						<ul class="section-child-des">
+							<li>给文字元素添加/修改背景颜色。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">水平线</p>
+						<ul class="section-child-des">
+							<li>1、添加水平线。</li>
+							<li>2、使用退格键或删除键可以删除水平线。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">图片</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处添加图片文件。</li>
+							<li>2、支持本地上传文件和URL链接式文件。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">视频</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处添加视频文件。</li>
+							<li>2、支持本地上传文件和URL链接式文件。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">音频</p>
+						<ul class="section-child-des">
+							<li>1、选中/光标插入处添加音频文件。</li>
+							<li>2、支持本地上传文件和URL链接式文件。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">撤销</p>
+						<ul class="section-child-des">
+							<li>恢复上次编辑的内容。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">重做</p>
+						<ul class="section-child-des">
+							<li>恢复撤销的内容。</li>
+						</ul>
+					</div>
+					<div class="section-child">
+						<p class="section-child-headline">帮助</p>
+						<ul class="section-child-des">
+							<li>查看帮助。</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="write-blogs-edit-tool-preview"><!-- 写博客底部编辑-工具-预览 -->
+			<div class="edit-area-wrapper" id="edit-area-wrapper"><!-- 编辑区域 -->
+				<iframe id="The-editing-zone" src="The_editing_zone.html" width="100%" height="100%"></iframe>
+				<!-- <div id="edit-page" designMode="on" contenteditable="true" spellcheck="false" style=""><!-- 编辑页面 -->
+					<!-- <div class="file-image" contenteditable="false"></div> -->
+					<!-- <div class="file-video"><video controls="controls" src="../Snow.mp4"></video></div> -->
+					<!-- <div class="file-audio"><audio controls="controls" src="../Snow.mp4"></audio></div> -->
+					<!-- <a contenteditable="false" href="http://www.gmll.xyz" target="_blank">12</a> -->
+				<!-- </div> -->
+			</div>
+			<div id="tool-kit"><!-- 工具箱 -->
+				<ul class="top-kit">
+					<li class="screen-full-close-btn" onclick="close_primp_bar('#edit-tool');" title="显示/隐藏顶部工具箱" style="padding: 3px 3px 1px 3px;"><span style="font-size: 20px;" class="icon icon-primp"></span></li>
+					<li class="show_hide_right need-hide-btn" onclick="close_open_right_preview();" title="显示/隐藏右侧预览" style="padding: 3.5px 3px 2px 3px;"><span class="icon icon-book-open"></span></li>
+					<li class="show_hide_preview" onclick="close_open_preview_page();" title="打开/关闭预览页面" style="padding: 3.5px 3px 2px 3px;"><span class="icon icon-eye"></span></li>
+				</ul>
+				<ul class="bottom-kit">
+					<li class="need-hide-btn" onclick="open_sync_scroll();" title="打开/关闭双向同步滚动" style="padding: 3.5px 3px 2.5px 3px;"><span style="" class="icon icon-synchronize"></span></li>
+					<li onclick="screen_full_edit();" title="打开/关闭全屏编辑" style="padding: 1.5px 3px 4px 3px;"><span style="font-size: 12px;" class="icon icon-screen-full"></span></li>
+					<li class="screen-full-close-btn" onclick="close_primp_bar('#bottom-information');" title="显示/隐藏底部状态栏" style="padding: 3px 3px 2px 3px;"><span style="font-size: 18px;" class="icon icon-bar_chart"></span></li>
+				</ul>
+			</div>
+			<div class="preview-area-wrapper" id="preview-area-wrapper"><!-- 预览区域 -->
+				<iframe id="preview-area-blogs" src="preview-area-blogs.html" width="100%" height="100%"></iframe>
+			</div>
+		</div>
+		<ul id="bottom-information" onselectstart="return false"><!-- 底部信息 -->
+			<li id="Hyper_Smart_Text" style="letter-spacing: 0.5px;">HyperSmartText</li>
+			<li><span id="words-number" class="default-value">0</span><span>字数</span></li>
+			<li><span id="line-number" class="default-value">0</span><span>行数</span></li>
+			<li><span>当前行</span><span id="current-line" class="default-value">0</span></li>
+			<li><span>当前列</span><span id="current-column" class="default-value">0</span></li>
+			<li id="save-time" style="width: 100%;text-align: right;margin-right: 0px;display: none;"><span>上次保存时间：</span><span class="time-text"></span></li>
+		</ul>
+	</body>
+</html>
+<script src="../js/WriteBlogs.js" type="text/javascript" charset="utf-8"></script>

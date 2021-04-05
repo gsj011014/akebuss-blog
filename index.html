@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>登录页面</title>
+		<link rel="stylesheet" type="text/css" href="fonts/index_page/pc-index-icon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index_page.css"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<script src="js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="pc-terminal-model"><!-- PC端样式 -->
+			<div class="pc-login-bg"><!-- PC登录背景 -->
+				<div class="left-wrapper wrapper-content"><!-- 左侧包装 -->
+					<span class="blog-text">阿克布斯博客</span>
+				</div>
+				<div class="right-wrapper wrapper-content"><!-- 右侧包装 -->
+					<div class="pc-login-child login-child login-module pc-login-module"><!-- 登录模块 -->
+						<p class="welcome-login-text">欢迎登录</p>
+						<ul class="input-list">
+							<li>
+								<p class="input-wrapper">
+									<i class="icon icon-first icon-user"></i>
+									<input type="text" placeholder="请输入用户名" class="roomname-text" />
+									<i class="icon icon-cancel"></i>
+								</p>
+								<p class="hint-wrapper">
+									<i class="icon icon-warning"></i>
+									<span class="hint-text">请输入用户名</span>
+								</p>
+							</li>
+							<li>
+								<p class="input-wrapper">
+									<i class="icon icon-first icon-lock"></i>
+									<input type="password" placeholder="请输入密码" class="password-text" />
+									<i class="icon icon-eye1"></i>
+								</p>
+								<p class="hint-wrapper">
+									<i class="icon icon-warning"></i>
+									<span class="hint-text">请输入密码</span>
+								</p>
+							</li>
+							<li>
+								<p class="input-wrapper">
+									<i class="icon icon-first icon-verified_user"></i>
+									<input type="text" placeholder="请输入验证码" class="random-verification-code-input" value="" />
+									<span class="random-verification-code" title="点击更新验证码">ABCD</span>
+								</p>
+								<p class="hint-wrapper">
+									<i class="icon icon-warning"></i>
+									<span class="hint-text">请输入验证码</span>
+								</p>
+							</li>
+						</ul>
+						<div class="remember-forget-wrapper">
+							<p class="remember-password-wrapper"><input type="checkbox" name="" id="remember-password" value="" /><label class="auto-login-btn" for="remember-password">自动登录</label></p>
+							<p class="forget-password-wrapper" onclick="location.href = 'plus/retrieve_password_page.html'"><span>忘记密码?</span></p>
+						</div>
+						<p class="operating-button" onclick="location.href = 'plus/HomePage.html'">立即登录</p>
+						<p class="bottom-text"><span onclick="location.href = 'plus/register_page.html'">没有账号？点击注册</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="mobile-terminal-model"><!-- 移动端样式 -->
+			<div class="mobile-login-bg login-child login-module">
+				<span class="blog-text">阿克布斯博客</span>
+				<div class="mobile-login-child mobile-login-module"><!-- 移动端登录模块 -->
+					<p class="login-text">登录</p>
+					<div class="input-wrapper">
+						<div class="input-wrapper-child">
+							<p class="moblie-user-name">用户名</p>
+							<p class="moblie-input">
+								 <input type="text" placeholder="请输入用户名" class="roomname-text" />
+								 <i class="icon icon-cancel"></i>
+							</p>
+						</div>
+						<div class="input-wrapper-child">
+							<p class="moblie-user-name">密码</p>
+							<p class="moblie-input">
+								 <input type="password" placeholder="请输入密码" class="password-text" />
+								 <i class="icon icon-eye1"></i>
+							</p>
+						</div>
+						<div class="input-wrapper-child">
+							<p class="moblie-user-name">验证码</p>
+							<p class="moblie-input">
+								 <input type="text" placeholder="请输入验证码" class="random-verification-code-input"/>
+								 <span class="random-verification-code" title="点击更新验证码">ABCD</span>
+							</p>
+						</div>
+						<p class="moblie-forget-password-text"><span onclick="location.href='plus/retrieve_password_page.html'">忘记密码?</span></p>
+					</div>
+				</div>
+				<div class="moblie-login-btn-wrapper">
+					<p class="auto-login">
+						<input type="checkbox" name="" id="auto-login" value="" />
+						<label for="auto-login">自动登录</label>
+					</p>
+					<p class="moblie-login-btn operating-button" onclick="location.href='plus/HomePage.html'">登录</p>
+				</div>
+				<p class="register-now"><span class="register-now-text" onclick="location.href='plus/register_page.html'">没有账号？马上注册</span></p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/index_page.js" type="text/javascript" charset="utf-8"></script>

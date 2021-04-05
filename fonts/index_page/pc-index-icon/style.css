@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?l3r6e6');
+  src:  url('icomoon.eot?l3r6e6#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?l3r6e6') format('truetype'),
+    url('icomoon.woff?l3r6e6') format('woff'),
+    url('icomoon.svg?l3r6e6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e904";
+}
+.icon-cancel:before {
+  content: "\e903";
+}
+.icon-warning:before {
+  content: "\e902";
+}
+.icon-lock:before {
+  content: "\e901";
+}
+.icon-phone_iphone:before {
+  content: "\e905";
+}
+.icon-verified_user:before {
+  content: "\e900";
+}
+.icon-eye1:before {
+  content: "\f06e";
+}
+.icon-eye-slash:before {
+  content: "\f070";
+}
+.icon-user:before {
+  content: "\e971";
+}

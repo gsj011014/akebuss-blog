@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?y9gg1x');
+  src:  url('icomoon.eot?y9gg1x#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?y9gg1x') format('truetype'),
+    url('icomoon.woff?y9gg1x') format('woff'),
+    url('icomoon.svg?y9gg1x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star-o:before {
+  content: "\f0091";
+}
+.icon-share-square-o:before {
+  content: "\f0451";
+}
+.icon-thumbs-o-up:before {
+  content: "\f0871";
+}
+.icon-angle-left:before {
+  content: "\f1041";
+}
+.icon-angle-right:before {
+  content: "\f1051";
+}
+.icon-angle-up:before {
+  content: "\f1061";
+}
+.icon-angle-down:before {
+  content: "\f1071";
+}
+.icon-thumbs-up:before {
+  content: "\e9012";
+}
+.icon-chat-3:before {
+  content: "\e9001";
+}
+.icon-notebook-list:before {
+  content: "\e9021";
+}

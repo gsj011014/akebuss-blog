@@ -1,0 +1,38 @@
+body,
+html{
+	position: relative;
+	background-color: white !important;
+}
+body::-webkit-scrollbar {
+	width: 8px;
+	background-color:rgb(241,241,241);
+} 
+body::-webkit-scrollbar-track { 
+
+} 
+body::-webkit-scrollbar-thumb { 
+	background-color: rgb(193,193,193);
+}
+#preview-area{
+	width: 100%;
+	min-height: calc(100% - 30px);/* 需要高度 需要多出部分溢出 */
+	padding: 15px 0px;
+	outline: none;
+	margin: 0 auto;
+	background-color: white;
+	max-width: 800px !important;
+}
+@media screen and (max-width:1024px) {
+	#preview-area{
+		width: calc(100% - 30px) !important;
+		max-width: 800px !important;
+	}
+}
+#shade-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+}

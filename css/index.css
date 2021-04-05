@@ -1,0 +1,953 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: black;
+	font-family: "微软雅黑";
+	/* transition: all 0.5s ease-in-out 0s; */
+	outline: none;
+}
+html{
+	width: 110%;
+	height: 100%;
+	background-image: url(../image/login-page/login-bg1.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+body{
+	width: 91%;
+	height: 100%;
+	font-size: 16px;
+}
+
+#blogs-name{
+	font-size: 50px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 5px;
+	padding: 40px 0px;
+}
+.login-wrapper{
+	width: 620px;
+	height: 450px;
+	background-color: rgba(231,239,244,0.7);
+	margin: 0px auto;
+	overflow: hidden;
+	transition: all 0.8s ease-in-out 0s;
+}
+.login-top-headline{
+	position: relative;
+	width: 100%;
+	height: 17%;
+	background-color: pink;
+	 background-color: rgb(255,255,255,0.1);
+}
+.login-text{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	font-size: 1.25rem;
+	color: black;
+	text-align: center;
+	float: left;
+	cursor: pointer;
+	display:table;
+}
+.login-text span{
+	display:table-cell;vertical-align:middle;
+}
+.register-text{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	font-size: 1.25rem;
+	color: black;
+	text-align: center;
+	float: left;
+	/* line-height: 372%; */
+	cursor: pointer;
+	display:table;
+}
+.register-text span{
+	display:table-cell;vertical-align:middle;
+}
+.bottom-line{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	height: 2px;
+	background-color: rgb(150,150,150);
+	transition: all 0.5s ease-in-out 0s;
+}
+.register-text:hover .bottom-line{
+	background-color: black;
+}
+.main{
+	position: relative;
+	overflow: hidden;
+	width: 80%;
+	height: 90%;
+	margin: 3% auto;
+	/* background-color: red; */
+}
+/*登录内容*/
+.logon{
+	position: absolute;
+	width: 90%;
+	height: 70%;
+	top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	background: rgb(255,255,255,0.6);
+	font-size: 0.75rem;
+	/* vertical-align: middle; */
+	transition: all 0.8s ease-in-out 0s;
+	z-index: 1;
+}
+.logon-cen{
+	/* background-color: greenyellow; */
+	width: calc(100% - 60px);
+	height: calc(100% - 60px);
+	position: relative;
+	top: 35px;
+	margin: 0px auto;
+	/* overflow: hidden; */
+}
+.logon-cen .user-roomname-wrapper,
+.logon-cen .user-password-wrapper{
+	width: 100%;
+	height: 75px;
+}
+.logon-cen .user-log-wrapper{
+	width: 100%;
+	height: 72px;
+}
+.user-roomname-wrapper .user-roomname-child{
+	width: 100%;
+	height: 45px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-roomname-wrapper .user-roomname-child span{
+	display: inline-block;
+	width: 45px;
+	height: 100%;
+	background-color: #dbdbdb;
+	position: absolute;
+	left: 0;
+	top: 0; 
+	border: 0;
+	padding: 0;
+	color: #f2f2f2;
+	margin: 0;
+	font-size: 30px;
+	line-height: 45px;
+	text-align: center;
+}
+.user-roomname-wrapper .user-roomname-child input{
+	width: calc(100% - 43px);
+	height: 100%;
+	background-color: white;
+	border: none;
+	appearance: none;
+	outline: none;
+	position: absolute;
+	left:45px;
+	top: 0px;
+	font-size: 0.875rem;
+	text-indent: 10px;
+}
+.user-roomname-wrapper .user-roomname-text{
+	width: 100%;
+	height: calc(100% - 43px);
+	position: relative;
+	color: red;
+	font-size: 11px;
+	line-height: 25px;
+	text-align: center;
+	animation: labelMoveUser  0.7s ease 0s infinite alternate;
+}
+.user-password-wrapper .user-password-child{
+	width: 100%;
+	height: 45px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-password-wrapper .user-password-child span:nth-child(1){
+	display: inline-block;
+	width: 45px;
+	height: 100%;
+	background-color: #dbdbdb;
+	position: absolute;
+	left: 0;
+	top: 0; 
+	border: 0;
+	color: #f2f2f2;
+	padding: 0;
+	margin: 0;
+	font-size: 30px;
+	line-height: 45px;
+	text-align: center;
+}
+.user-password-wrapper .user-password-child input{
+	width: calc(100% - 75px);
+	height: 100%;
+	background-color: white;
+	border: none;
+	appearance: none;
+	outline: none;
+	position: absolute;
+	left: 45px;
+	top: 0px;
+	font-size: 0.875rem;
+	text-indent: 10px;
+}
+.user-password-wrapper .user-password-child #eye{
+	position: absolute; 
+	width: 35px;
+	height: 100%;
+	right: 0;
+	top: 0px;
+	background-color: #FFFFFF;
+}
+.user-password-wrapper .user-password-child #eye img{
+	width: 30px;
+	margin-left: 2.5px;
+	height: 36px;
+	margin-top: 4.5px;
+}
+.user-password-wrapper .user-password-text{
+	width: 100%;
+	height: calc(100% - 50px);
+	color: red;
+	font-size: 11px;
+	text-align: center;
+	line-height: 25px;
+	position: relative;
+	animation: labelMoveUser  0.7s ease 0s infinite alternate;
+}
+.user-log-wrapper .user-log-child{
+	width: 100%;
+	height: 42px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-log-wrapper .user-log-child input{
+	width: 100%;
+	height: 100%;
+	background-color: #eaa281;
+	border: 0;
+	color: #FFFFFF;
+	font-weight: 600;
+	letter-spacing: 10px;
+	text-align: center;
+	font-size: 1.375rem;
+	position:absolute;
+	cursor: pointer;
+}
+.user-check{
+	position: relative;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	margin-top: 6px;
+}
+input[type="checkbox"]:checked {
+   background:url(../image/login-page/dui.png);
+   background-size: 100% 100%;
+}
+input[type="checkbox"]{
+	position: absolute;
+	-webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border:  1px solid  silver;
+    border-radius: 3px;
+}
+#checkbox1{
+	right: 160px;
+	top: 13px;
+	cursor: pointer;
+}
+#checkbox2{
+	right: 49px;
+	top: 13px;
+	cursor: pointer;
+}
+.user-log-wrapper label{
+	position: absolute;
+	font-size: 11px;
+	cursor: pointer;
+}
+.checkbox1{
+	right: 110px;
+	top: 6px;
+}
+.checkbox2{
+	/* right: 50px; */
+	right: 0;
+	top: 6px;
+}
+/*注册内容*/
+.logins{
+	position: absolute;
+	width: 90%;
+	height: 70%;
+	top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	background: rgb(255,255,255,0.6);
+	font-size: 0.75rem;
+	transition: all 0.8s ease-in-out 0s;
+	opacity: 0;
+}
+.logins-cen{
+	width: calc(100% - 60px);
+	height: calc(100% - 60px);
+	position: relative;
+	top: 23px;
+	margin: 0px auto;
+	/* overflow: hidden; */
+	/* background-color: red; */
+}
+.logins-cen .user-nextname-wrapper,
+.logins-cen .user-roompassword-wrapper,
+.logins-cen .user-nextpassword-wrapper{
+	width: 100%;
+	height: 66px;
+}
+@keyframes labelMoveUser{
+	25%{
+		margin-left: 12px;
+	}
+	50%{
+		margin-left: 0px;
+	}
+	75%{
+		margin-left: 12px;
+	}
+	100%{
+		margin-left: 0px;
+	}
+}
+.user-nextname-wrapper .user-nextname-child{
+	width: 100%;
+	height: 42px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-nextname-wrapper .user-nextname-child span{
+	display: inline-block;
+	width: 42px;
+	height: 100%;
+	background-color: #dbdbdb;
+	position: absolute;
+	left: 0;
+	top: 0; 
+	border: 0;
+	padding: 0;
+	color: #f2f2f2;
+	margin: 0;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: center;
+}
+.user-nextname-wrapper .user-nextname-child input{
+	width: calc(100% - 42px);
+	height: 100%;
+	background-color: white;
+	border: none;
+	appearance: none;
+	outline: none;
+	position: absolute;
+	left:42px;
+	top: 0px;
+	text-indent: 10px;
+	font-size: 0.875rem;
+}
+.user-nextname-wrapper .user-nextname-text{
+	width: 100%;
+	height: calc(100% - 42px);
+	color: red;
+	line-height: 24px;
+	font-size: 11px;
+	position: relative;
+	text-align: center;
+	animation: labelMoveUser  0.7s ease 0s infinite alternate;
+}
+.user-roompassword-wrapper .user-roompassword-child{  /*注册密码*/
+	width: 100%;
+	height: 42px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-roompassword-wrapper .user-roompassword-child span:nth-child(1){
+	display: inline-block;
+	width: 42px;
+	height: 100%;
+	background-color: #dbdbdb;
+	position: absolute;
+	left: 0;
+	top: 0; 
+	border: 0;
+	color: #f2f2f2;
+	padding: 0;
+	margin: 0;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: center;
+}
+.user-roompassword-wrapper .user-roompassword-child input{
+	width: calc(100% - 76px);
+	height: 100%;
+	background-color: white;
+	border: none;
+	appearance: none;
+	outline: none;
+	position: absolute;
+	left: 42px;
+	top: 0px;
+	font-size: 0.875rem;
+	text-indent: 10px;
+}
+.user-roompassword-wrapper .user-roompassword-child #eye{
+	position: absolute; 
+	width: 35px;
+	height: 100%;
+	right: 0;
+	top: 0px;
+	background-color: #FFFFFF;
+}
+.user-roompassword-wrapper .user-roompassword-child #eye img{
+	width: 30px;
+	margin-left: 2.5px;
+	height: 36px;
+	margin-top: 4.5px;
+}
+.user-roompassword-wrapper .user-roompassword-text{
+	width: 100%;
+	height: calc(100% - 42px);
+	text-align: center;
+	position: relative;
+	line-height: 24px;
+	color: red;
+	font-size: 11px;
+	animation: labelMoveUser  0.7s ease 0s infinite alternate;
+}
+.user-nextpassword-wrapper .user-nextpassword-child{  /*注册确认密码*/
+	width: 100%;
+	height: 42px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-nextpassword-wrapper .user-nextpassword-child span:nth-child(1){
+	display: inline-block;
+	width: 42px;
+	height: 100%;
+	background-color: #dbdbdb;
+	position: absolute;
+	left: 0;
+	top: 0; 
+	border: 0;
+	color: #f2f2f2;
+	padding: 0;
+	margin: 0;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: center;
+}
+.user-nextpassword-wrapper .user-nextpassword-child input{
+	width: calc(100% - 76px);
+	height: 100%;
+	background-color: white;
+	border: none;
+	appearance: none;
+	outline: none;
+	position: absolute;
+	left: 42px;
+	top: 0px;
+	font-size: 0.875rem;
+	text-indent: 10px;
+}
+.user-nextpassword-wrapper .user-nextpassword-child #eye{
+	position: absolute; 
+	width: 35px;
+	height: 100%;
+	right: 0;
+	top: 0px;
+	background-color: #FFFFFF;
+}
+.user-nextpassword-wrapper .user-nextpassword-child #eye img{
+	width: 30px;
+	margin-left: 2.5px;
+	height: 36px;
+	margin-top: 4.5px;
+}
+.user-nextpassword-wrapper .user-nextpassword-text{
+	width: 100%;
+	height: calc(100% - 42px);
+	text-align: center;
+	line-height: 24px;
+	color: red;
+	font-size: 11px;
+	position: relative;
+	animation: labelMoveUser  0.7s ease 0s infinite alternate;
+}
+.logins-cen .user-logtwo-wrapper{ /*立即注册*/
+	width: 100%;
+	height: 42px;
+}
+.user-logtwo-wrapper .user-logtwo-child{
+	width: 100%;
+	height: 42px;
+	background-color: #EAA281;
+	position: relative;
+}
+.user-logtwo-child input{
+	width: 100%;
+	height: 100%;
+	background-color: #eaa281;
+	border: 0;
+	color: #FFFFFF;
+	font-weight: 600;
+	letter-spacing: 10px;
+	font-size:1.3125rem;
+	position:absolute;
+	cursor: pointer;
+}
+footer{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: 20px;
+	text-align: center; 
+}
+footer p{
+	color: white;
+}
+@media screen and (min-width:568px) and (max-width:1024px) and (max-height:1024px){/* 平板电脑 手机横屏 */
+	body{
+		font-size: 15px;
+	}
+	#blogs-name{
+		font-size: 40px;
+		padding: 30px 0px 35px 0px;
+	}
+	.login-wrapper{
+		width: 500px;
+		height:450px;
+	}
+	.login-top-headline{
+		height: 14%;
+	}
+	.login-top-headline span{
+		font-size: 1.125rem;
+		line-height: 65px;
+	}
+	.main{
+		width: 95%;
+		height: 96%;
+	}
+	#eye{
+		width: 30px;
+		height: 43.41px;
+	}
+	#eye img{
+		width: 30px;
+		height: 43.41px;
+	}
+}
+@media screen and (max-width:568px) and (max-height:1024px){/* 手机竖屏 */
+	body{
+		font-size: 14px;
+	}
+	
+	#blogs-name{
+		font-size: 30px;
+		padding: 30px 0px;
+	}
+	.login-wrapper{ 
+		width: 80%;
+		height: 370px;     
+	}
+	.login-top-headline{
+		height: 12%;
+	}
+	/* .login-top-headline span{
+		position: absolute;
+		font-size: 17px;
+		width: 50%;
+		text-align: center; */
+		/* line-height: 55px; */
+	/* } */
+	.login-text{
+		font-size: 17px;
+		width:50%;
+		height: 100%; 
+	}
+	.login-text span{
+		font-size: 17px;
+		width: 100%;
+		height: 100%; 
+	}
+	.register-text {
+		left: 50%;
+		display:table;
+	}
+	.register-text span{
+		font-size: 17px;
+		width: 100%;
+		height: 100%;
+		display:table-cell;
+		vertical-align:middle;
+	}
+	.bottom-line{
+		height: 3%;
+	}
+	.main{
+		width: 100%;
+		height:88%;
+		margin: 0 auto;
+	}
+	/*登录内容*/
+	.logon{
+		width: 82%;
+		height: 75%;
+		top: 8%;
+	}
+	.logon-cen{
+		width: 85%;
+		height: 87%;
+		margin:0% auto ;
+		top: 13%;
+	}
+	/*注册内容*/
+	.logins{
+		width: 82%;
+		height: 75%;
+		top: 8%;
+	}
+	.logins-cen{
+		width: 85%;
+		height: 90%;
+		margin:0% auto ;
+		top: 8%;
+	}
+	.logon-cen .user-roomname-wrapper,
+	.logon-cen .user-password-wrapper{
+		height: 29%;
+	}
+	.logins-cen .user-nextname-wrapper,
+	.logins-cen .user-roompassword-wrapper,
+	.logins-cen .user-nextpassword-wrapper{
+		height: 26%;
+	}
+	.user-roomname-wrapper .user-roomname-child{
+		height:57%;
+	}
+	.user-password-wrapper .user-password-child{
+		height: 57%;
+	}
+	.user-nextname-wrapper .user-nextname-child{
+		height: 60%;
+	}
+	.user-roompassword-wrapper .user-roompassword-child{
+		height: 60%;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child{
+		height: 60%;
+	}
+	.user-roomname-wrapper .user-roomname-child span{
+		/* width: 19.2%; */
+		width: 35px;
+		height: 100%; 
+		font-size: 26px;
+		line-height: 35px;
+		text-align: center;
+	}
+	.user-nextname-wrapper .user-nextname-child span{
+		width: 34px;
+		height: 100%; 
+		line-height: 34px;
+		font-size: 26px;
+	}
+	.user-password-wrapper .user-password-child span:nth-child(1){
+		/* width: 19.2%; */
+		width: 35px;
+		height: 100%;
+		font-size: 28px;
+		line-height: 35px;
+		text-align: center;
+	}
+	.user-roompassword-wrapper .user-roompassword-child span:nth-child(1){
+		width: 34px;
+		height: 100%; 
+		line-height: 34px;
+		font-size: 26px;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child span:nth-child(1){
+		width: 34px;
+		height: 100%; 
+		line-height: 34px;
+		font-size: 26px;
+	}
+	#eye{
+		width: 28px;
+		height: 44.2px;
+	}
+	/* #eye img{
+		width: 28px;
+		height: 38px; */
+		/* margin-top: 3.1px; */
+	/* } */
+	footer{
+		bottom: 30px;
+		font-size: 12px;
+	}
+	.user-nextname-wrapper .user-nextname-child input{
+		font-size: 0.73rem;
+		width: calc(100% -  34px);
+		height: 100%;
+		left:34px;
+	}
+	.user-roompassword-wrapper .user-roompassword-child input{
+		width: calc(100% - 63px);
+		height: 100%;
+		left:34px;
+		font-size: 0.73rem;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child input{
+		width: calc(100% - 63px);
+		height: 100%;
+		left:34px;
+		font-size: 0.73rem;
+	}
+	.user-roomname-wrapper .user-roomname-child input{
+		font-size: 0.73rem;
+		/* width:80.8%; */
+		width: calc(100% - 35px);
+		height: 100%;
+		left:35px;
+	}
+	.user-password-wrapper .user-password-child input{
+		/* width:66.1%; */
+		width: calc(100% - 64px);
+		height: 100%;
+		left:35px;
+		font-size: 0.73rem;
+	}
+	.user-password-wrapper .user-password-child #eye{
+		/* width: 15%; */
+		width: 30px;
+		height: 100%;
+	}
+	.user-password-wrapper .user-password-child #eye img{
+		/* width: 90%; */
+		width: 25px;
+		height:70%;
+		margin: 19% 2.5px; 
+	}
+	.user-roompassword-wrapper .user-roompassword-child #eye{
+		width: 30px;
+		height: 100%;
+	}
+	.user-roompassword-wrapper .user-roompassword-child #eye img{
+		width: 25px;
+		height:70%;
+		margin: 19% 2.5px; 
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child #eye{
+		width: 30px;
+		height: 100%;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child #eye img{
+		width: 25px;
+		height:70%;
+		margin: 19% 2.5px; 
+	}
+	.user-roomname-wrapper .user-roomname-text{
+		width: 100%;
+		height:40%;
+		font-size:0.75rem;
+		line-height: 25px;
+	}
+	.user-password-wrapper .user-password-text{
+		width: 100%;
+		height:40%;
+		font-size:0.75rem;
+		line-height: 25px;
+	}
+	.user-nextname-wrapper .user-nextname-text{
+		width: 100%;
+		height:40%;
+		font-size:0.75rem;
+		line-height: 27px;
+	}
+	.user-roompassword-wrapper .user-roompassword-text{
+		width: 100%;
+		height:40%;
+		font-size:0.75rem;
+		line-height: 27px;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-text{
+		width: 100%;
+		height:40%;
+		font-size:0.75rem;
+		line-height: 27px;
+	}
+	.logon-cen .user-log-wrapper{
+		height: 33%;
+	}
+	.user-log-wrapper .user-log-child{
+		height:47%;
+	}
+	.user-log-wrapper .user-log-child input{
+		width: 100%;
+		height: 100%;
+		font-size:1.125rem;
+	}
+	.user-check{
+		height: 50%;
+		margin-top:1%;
+	}
+	#checkbox1{
+		right:130px;
+		width: 11px;
+		height: 11px;
+	}
+	.checkbox1{
+		 right: 80px;
+		/* margin-left: 10%; */
+	}
+	#checkbox2{
+		right: 50px;
+		width: 11px;
+		height: 11px;
+	}
+	.checkbox2{
+		right: 0%;
+	}
+	.logins-cen .user-logtwo-wrapper{
+		height: 15%;
+	}
+	.user-logtwo-wrapper .user-logtwo-child{
+		height:100%;
+	}
+	.user-logtwo-child input{
+		width: 100%;
+		height: 100%;
+		font-size:1.0625rem;
+	}
+}
+@media screen and (max-width:320px) and (max-height:568px){/* 小屏手机 */
+	.login-wrapper{
+		width: 80%;
+		height: 320px;     
+	}
+	#checkbox1{
+	right: 73%;
+	}
+	.checkbox1{
+		right: 46%;
+	}
+	#checkbox2{
+		right: 27%;
+	}
+	.user-password-wrapper .user-password-child span:nth-child(1){
+		font-size: 24px;
+		width: 30px;
+		line-height: 30px;
+	}
+	.user-roomname-wrapper .user-roomname-child span{
+		width: 30px;
+		font-size: 25px;
+		line-height:30px;
+	}
+	.user-roomname-wrapper .user-roomname-child input{
+		width: calc(100% - 30px);
+		height: 100%;
+		left:30px;
+		font-size: 0.6875rem;
+	}
+	.user-password-wrapper .user-password-child input{
+		width: calc(100% - 52px);
+		left:30px;
+		font-size: 0.6875rem;
+	}
+	.user-password-wrapper .user-password-child #eye{
+		width:23px;
+		height: 100%;
+	}
+	.user-password-wrapper .user-password-child #eye img{
+		width: 23px;
+		margin:19% 0%;
+	}
+	.user-nextname-wrapper .user-nextname-child span{
+		width: 30px;
+		line-height: 30px;
+		font-size: 22px;
+	}
+	.user-roompassword-wrapper .user-roompassword-child span:nth-child(1){
+		width: 30px;
+		line-height: 30px;
+		font-size: 22px;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child span:nth-child(1){
+		width: 30px;
+		line-height: 30px;
+		font-size: 22px;
+	}
+	.user-nextname-wrapper .user-nextname-child input{
+		width: calc(100% -  30px);
+		left:30px;
+		font-size: 0.6875rem;
+	}
+	.user-logtwo-child input{
+		font-size:0.9375rem;
+	}
+	.user-roompassword-wrapper .user-roompassword-child #eye{
+		width: 25px;
+	}
+	.user-roompassword-wrapper .user-roompassword-child #eye img{
+		width: 25px;
+		margin:19% 0%;
+	}
+	.user-roompassword-wrapper .user-roompassword-child input{
+		width: calc(100% - 54px);
+		left:30px;
+		font-size: 0.6875rem;
+	}
+	.user-log-wrapper .user-log-child input{
+		font-size:1rem;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child #eye{
+		width: 25px;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child #eye img{
+		width: 25px;
+		margin:19% 0%;
+	}
+	.user-nextpassword-wrapper .user-nextpassword-child input{
+		width: calc(100% - 54px);
+		left:30px;
+		font-size: 0.6875rem;
+	}
+	.login-text span{
+		font-size: 1rem;
+	}
+	.register-text span{
+		font-size: 1rem;
+	}
+}
+@media screen and (max-width:1024px){/* 平板电脑 手机竖屏 */
+}

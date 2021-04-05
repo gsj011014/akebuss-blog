@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>阿克布斯云盾系统智能安全检测</title>
+		<link rel="stylesheet" type="text/css" href="../css/safety_detection.css"/>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public_function.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p id="cloud-shield-system-text">阿克布斯云盾系统智能安全检测</p>
+		<div class="detection-status-wrapper">
+			<div class="safety-detection-wrapper">
+				<div class="safety-detection-animtion"></div>
+				<div class="detection-text">
+					<span class="detection-child-text">木马病毒智能检测中</span>
+					<div class="dot-loading">
+						<span>.</span>
+						<span>.</span>
+						<span>.</span>
+					</div>
+				</div>
+			</div>
+			<div class="detection-successful detection-hint-logo">
+				<p class="detection-successful-bg detection-bg"></p>
+				<p class="detection-successful-text detection-text-child">检测完毕,并未发现安全问题！</p>
+			</div>
+			<div class="detection-defeated detection-hint-logo">
+				<p class="detection-defeated-bg detection-bg"></p>
+				<p class="detection-defeated-text detection-text-child">检测完毕,存在不良言论,发表失败！</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/safety_detection.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>博客查看页面</title>
+		<link rel="stylesheet" type="text/css" href="../fonts/HomePage/HomePage-IconFont.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Blog_for_page.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ball-triangle-path.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/page-headline.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/Blog_for_page/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public-animation.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pop-up-windows-public-fun.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public_function.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/public_icon/ok-icon/style.css"/>
+		<script src="../js/FlexBug.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/page-headline.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public-animation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/pop-up-windows-public-fun.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Computational_Time_Difference_Gu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Pagination_Gu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public_function.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mobile_headline_fun.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="loader_wrpper"><!-- 页面加载动画 -->
+			<div class="loader_style"></div>
+		</div>
+		<div id="image-viewer-bg"><!-- 图片查看 -->
+			<div id="image-viewer">
+				
+			</div>
+		</div>
+		<div id="report-write-wrapper" onselectstart="return false"><!-- 举报填写 -->
+			<div class="report-write">
+				<p class="report-write-headline"><!-- 举报顶部 -->
+					<span>举报</span>
+					<span class="icon icon-close-btn"></span> 
+				</p>
+				<div class="choose-report-content">
+					<p class="choose-report-text">选择你想要举报的内容（必选）</p>
+					<ul class="choose-options">
+						<li>内容涉黄</li>
+						<li>政治相关</li>
+						<li>内容抄袭</li>
+						<li>涉嫌广告</li>
+						<li>内容侵权</li>
+						<li>侮辱谩骂</li>
+						<li>样式问题</li>
+						<li>其他内容</li>
+					</ul>
+					<ul class="choose-options-content"><!-- 选项对应的内容 -->
+						<li>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="original-link"><!-- 原文链接 -->
+								<p class="original-link-headline">原文链接（必填）</p>
+								<input type="text" name="" id="original-link-url" value="" placeholder="请输入原文链接"/>
+							</div>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="choose-specific-reason">
+								<p class="choose-specific-reason-headline">请选择具体原因（必选）</p>
+								<nav class="choose-specific-reason-option-1 choose-specific-reason-option"><!-- 具体原因选项 -->
+									<a>包含不实信息</a>
+									<a>涉及个人隐私</a>
+								</nav>
+							</div>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="choose-specific-reason">
+								<p class="choose-specific-reason-headline">请选择具体原因（必选）</p>
+								<nav class="choose-specific-reason-option-2 choose-specific-reason-option"><!-- 具体原因选项 -->
+									<a>侮辱谩骂</a>
+									<a>诽谤</a>
+								</nav>
+							</div>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+						<li>
+							<div class="choose-specific-reason">
+								<p class="choose-specific-reason-headline">请选择具体原因（必选）</p>
+								<nav class="choose-specific-reason-option-3 choose-specific-reason-option"><!-- 具体原因选项 -->
+									<a>搬家样式</a>
+									<a>博文样式</a>
+								</nav>
+							</div>
+						</li>
+						<li>
+							<div class="option-content-supplementary-instruction">
+								<p class="option-content-supplementary-instruction-headline">补充说明（选填）</p>
+								<textarea rows="2" cols="" placeholder="请详细描述您的举报内容"></textarea>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="report-write-footer"><!-- 底部 -->
+					<span id="cancel-report">取消</span>
+					<span id="sure-report">确定</span>
+				</p>
+			</div>
+		</div>
+		<div class="blog-wrapper" id="blog-wrapper">
+			<header><!-- 头部 -->
+				<div class="header-wrapper header-wrapper-pc"><!-- pc端顶部导航 -->
+					<span class="header-wrapper-pc-child blogs-name" onclick="location.href='HomePage.html';">博客</span><!-- 博客名称 -->
+					<span class="header-wrapper-pc-child blogs-search-wrapper">
+						<input type="text" class="search-keyword" value="" placeholder="请输入搜索关键字" />
+						<span class="icon-search"></span>
+					</span>
+					<span class="header-wrapper-pc-child blogs-infor">
+						<div class="blogs-infor-child write-blogs" onclick="location.href = 'WriteBlogs.html'"><!-- 写博客 -->
+							<span class="icon-pencil"></span>
+							<span>写博客</span>
+						</div>
+						<div class="blogs-infor-child hint list-wrapper"><!-- 提示 -->
+							<span class="icon-bell color-change-white">
+								<span class="new-information"></span><!-- 新通知提示 -->
+							</span>
+							<ul>
+								<li><span class="icon-bullhorn icon"></span><span>公告</span></li>
+								<li><span class="icon-message icon"></span><span>评论</span></li>
+								<li><span class="icon-plus icon"></span><span>关注</span></li>
+								<li><span class="icon-like icon"></span><span>点赞</span></li>
+								<li><span class="icon-heart icon"></span><span>收藏</span></li>
+								<li><span class="icon-envelope-o icon"></span><span>私信</span></li>
+								<li><span class="icon-forum icon"></span><span>回答</span></li>
+								<li><span class="icon-info icon"></span><span>系统通知</span></li>
+								<li><span class="icon-cogs icon"></span><span>消息设置</span></li>
+							</ul>
+						</div>
+						<div class="user-information list-wrapper"><!-- 用户信息 -->
+							<div class="user-information-fun">
+								<span class="user-head-portrait"></span><!-- 用户头像 -->
+								<span class="user-head-name color-change-white">谷世杰</span>
+								<span class="icon-sort-desc color-change-white"></span>
+								<ul class="user-information-list"><!-- 用户信息列表 -->
+									<li><span class="icon-user icon"></span><span>个人中心</span></li>
+									<li><span class="icon-notebook icon"></span><span>我的博客</span></li>
+									<li><span class="icon-bookmark icon"></span><span>我的收藏</span></li>
+									<li><span class="icon-user-circle-o icon"></span><span>切换账号</span></li>
+									<li><span class="icon-exit icon" style="top: 2px;left: 2px;"></span><span>退出登录</span></li>
+								</ul>
+							</div>
+						</div>
+					</span>
+				</div>
+				<div class="header-wrapper header-wrapper-mobile"><!-- 顶部包装 移动端-->
+					<span class="header-wrapper-pc-child blogs-name">博客</span><!-- 博客名称 -->
+					<span class="header-wrapper-pc-child blogs-search-wrapper">
+						<input type="text" class="search-keyword" value="" placeholder="请输入搜索关键字" />
+						<span class="icon-search"></span>
+					</span>
+					<span class="header-wrapper-pc-child blogs-infor">
+						<span class="icon-menu"></span>
+						<p class="user-head-portrait"></p><!-- 用户头像 -->
+					</span>
+				</div>
+				<div class="mobile-list" id="mobile-list"><!-- 移动端列表 -->
+					<ul>
+						<li onclick="location.href = 'WriteBlogs.html'"><span class="icon-pencil"></span><span>写博客</span></li>
+						<li><span class="icon-bullhorn icon"></span><span>公告</span></li>
+						<li><span class="icon-message icon"></span><span>评论</span></li>
+						<li><span class="icon-plus icon"></span><span>关注</span></li>
+						<li><span class="icon-like icon"></span><span>点赞</span></li>
+						<li><span class="icon-heart icon"></span><span>收藏</span></li>
+						<li><span class="icon-envelope-o icon"></span><span>私信</span></li>
+						<li><span class="icon-forum icon"></span><span>回答</span></li>
+						<li><span class="icon-info icon"></span><span>系统通知</span></li>
+						<li><span class="icon-cogs icon"></span><span>消息设置</span></li>
+						<li><span class="icon-user icon"></span><span>个人中心</span></li>
+						<li><span class="icon-notebook icon"></span><span>我的博客</span></li>
+						<li><span class="icon-bookmark icon" style="margin-left: 10px;"></span><span>我的收藏</span></li>
+						<li><span class="icon-user-circle-o icon"></span><span>切换账号</span></li>
+						<li><span class="icon-exit icon" style="position: relative;left: 2px;"></span><span>退出登录</span></li>
+					</ul>
+				</div>
+			</header>
+			<div id="bottom-wrapper"><!-- 底部包装 -->
+				<div class="side-bar fixed-scroll-bug" id="side-bar"><!-- 侧边栏 -->
+					<div class="user-infor-bar"><!-- 用户信息栏 -->
+						<div class="head-infor"><!-- 头部信息 -->
+							<p class="user-head-portrait show_personal_data_ele"><!-- 用户头像 -->
+								
+							</p>
+							<div class="user-name"><!-- 用户名称 -->
+								<p class="name-text">谷世杰</p>
+								<p class="user-title"><span class="user-title-text">博客CEO</span><span class="user-homepage">TA的个人主页></span></p>
+							</div>
+						</div>
+						<ul class="user-blogs-infor"><!-- 用户博客信息 -->
+							<li><span>原创</span><span>224</span></li>
+							<li><span>粉丝</span><span class="fans-number">1000</span></li>
+							<li><span>获赞</span><span class="great-number">1</span></li>
+							<li><span>评论</span><span class="comment-number">2</span></li>
+							<li><span>访问</span><span>18万+</span></li>
+						</ul>
+						<ul class="user-title-level"><!-- 用户称号等级 -->
+							<li><span>等级：</span><span>VIP</span></li>
+							<li><span>周排名：</span><span>153</span></li>
+							<li><span>积分：</span><span>7014</span></li>
+							<li><span>总排名：</span><span>4846</span></li>
+							<li><span>勋章：</span><span>VIP</span></li>
+						</ul>
+						<div class="user-btn"><!-- 用户按钮 -->
+							<p class="bg-red-bo-red attention-btn">关注</p>
+							<p class="bg-white-bo-red">私信</p>
+						</div>
+					</div>
+					<div class="newest-article"><!-- 最新文章 -->
+						<!-- 侧边栏公共标题 -->
+						<p class="side-bar-public-headline">
+							<span></span>
+							<span>最新文章</span>
+						</p>
+						<ul class="newest-article-list"><!-- 最新文章列表 -->
+							<li class="main-text">Tomcat面试题（2020最新版）</li>
+							<li class="main-text">Spring面试题（2020最新版）</li>
+							<li class="main-text">Spring MVC面试题（2020最新版）</li>
+							<li class="main-text">Spring Cloud面试题（2020最新版）</li>
+							<li class="main-text">Spring Boot面试题（2020最新版）</li>
+						</ul>
+					</div>
+					<div class="classification-column"><!-- 分类专栏 -->
+						<p class="side-bar-public-headline">
+							<span></span>
+							<span>分类专栏</span>
+						</p>
+						<ul class="classification-column-list">
+							<li>
+								<p class="column-image"></p><!-- 专栏图片 -->
+								<p class="main-text">Java面试总结</p>
+								<p class="small-count-text">13篇</p>
+							</li>
+							<li>
+								<p class="column-image"></p><!-- 专栏图片 -->
+								<p class="main-text">程序员的一些思考</p>
+								<p class="small-count-text">2篇</p>
+							</li>
+							<li>
+								<p class="column-image"></p><!-- 专栏图片 -->
+								<p class="main-text">Java虚拟机</p>
+								<p class="small-count-text">6篇</p>
+							</li>
+							<li>
+								<p class="column-image"></p><!-- 专栏图片 -->
+								<p class="main-text">Spring Cloud</p>
+								<p class="small-count-text">20篇</p>
+							</li>
+							<li>
+								<p class="column-image"></p><!-- 专栏图片 -->
+								<p class="main-text">Tomcat</p>
+								<p class="small-count-text">7篇</p>
+							</li>
+						</ul>
+						<p class="unfold">展开</p>
+					</div>
+					<div class="pigeonhole"><!-- 归档 -->
+						<p class="side-bar-public-headline">
+							<span></span>
+							<span>归档</span>
+						</p>
+						<ul class="pigeonhole-list">
+							<li>
+								<span class="main-text">2020年2月</span>
+								<span class="small-count-text">11篇</span>
+							</li>
+							<li>
+								<span class="main-text">2020年1月</span>
+								<span class="small-count-text">6篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年12月</span>
+								<span class="small-count-text">32篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年11月</span>
+								<span class="small-count-text">13篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年10月</span>
+								<span class="small-count-text">45篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年9月</span>
+								<span class="small-count-text">116篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年8月</span>
+								<span class="small-count-text">8篇</span>
+							</li>
+							<li>
+								<span class="main-text">2019年7月</span>
+								<span class="small-count-text">4篇</span>
+							</li>
+						</ul>
+						<p class="unfold">展开</p>
+					</div>
+					<div class="newest-comment"><!-- 最新评论 -->
+						<p class="side-bar-public-headline">
+							<span></span>
+							<span>最新评论</span>
+						</p>
+						<ul class="newest-comment-list">
+							<li>
+								<p class="main-text">Spring Cloud面试题（2...</p>
+								<p class="comment-text"><span class="small-count-text comment-user-name">peanut2341：</span><span class="small-count-text user-comment-text">感觉还可以。</span></p>
+							</li>
+							<li>
+								<p class="main-text">进程和线程的区别(超详细)</p>
+								<p class="comment-text"><span class="small-count-text comment-user-name">ThinkWon：</span><span class="small-count-text user-comment-text">你的鼓励将是我创作的最大动力!</span></p>
+							</li>
+							<li>
+								<p class="main-text">Dubbo面试题（2020最新版）</p>
+								<p class="comment-text"><span class="small-count-text comment-user-name">qq_46367564：</span><span class="small-count-text user-comment-text">谢谢博主，学到了!</span></p>
+							</li>
+							<li>
+								<p class="main-text">进程和线程的区别(超详细)</p>
+								<p class="comment-text"><span class="small-count-text comment-user-name">jarbein：</span><span class="small-count-text user-comment-text">文章写的很不错，加油，期待更多好文章!</span></p>
+							</li>
+							<li>
+								<p class="main-text">Java异常面试题（2020最新版）</p>
+								<p class="comment-text"><span class="small-count-text comment-user-name">weixin_45685353：</span><span class="small-count-text user-comment-text">try-catch-finally中finally可以省略吧?</span></p>
+							</li>
+						</ul>
+					</div>
+					<div class="popular-articles newest-comment"><!-- 热门文章 -->
+						<p class="side-bar-public-headline">
+							<span></span>
+							<span>热门文章</span>
+						</p>
+						<ul class="newest-comment-list popular-articles-list">
+							<li>
+								<p class="main-text">B 站上有哪些很好的学习资源?</p>
+								<p class="comment-text"><span class="small-count-text">阅读数&nbsp;57333</span></p>
+							</li>
+							<li>
+								<p class="main-text">计算机专业的书普遍都这么贵，你们都是怎么获取资源的？</p>
+								<p class="comment-text"><span class="small-count-text">阅读数&nbsp;27724</span></p>
+							</li>
+							<li>
+								<p class="main-text">GitHub 上有哪些适合新手跟进的优质项目？</p>
+								<p class="comment-text"><span class="small-count-text">阅读数&nbsp;23770</span></p>
+							</li>
+							<li>
+								<p class="main-text">怎么才能最短时、高效、踏实的学习 Python？</p>
+								<p class="comment-text"><span class="small-count-text">阅读数&nbsp;8242</span></p>
+							</li>
+							<li>
+								<p class="main-text">16个behavior question 的面试官解析及tips（上）</p>
+								<p class="comment-text"><span class="small-count-text">阅读数&nbsp;7974</span></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="blog-right-Wrapper" id="blog-right-Wrapper">
+					<div class="blog-content" id="blog-content"><!-- 博客内容 -->
+						<div class="blog-content-headline"><!-- 博客内容标题 -->
+							<p id="blog-headline-text">有没有简单一点的 Python 小例子或小项目？</p>
+							<div id="issue-person-infor"><!-- 发布人信息 -->
+								<div class="left-infor">
+									<p class="user-head-portrait"><!-- 用户头像 --></p>
+									<div class="infor-text">
+										<p class="name-text">谷世杰</p>
+										<p class="user-title-text">博客CEO</p>
+									</div>
+								</div>
+								<div class="right-operation">
+									<span class="bg-red-bo-red attention-btn">关注</span>
+									<span class="bg-white-bo-red">私信</span>
+								</div>
+							</div>
+							<div class="blog-detailed-information"><!-- 博客详细信息 -->
+								<ul class="blog-detailed-information-text">
+									<li class="original">原创</li>
+									<li class="blog-detailed-information-user-name">九章算法</li>
+									<li class="last-issue-time">最后发布于2020-02-17 17:31:13</li>
+									<li class="read-count">阅读数 3937</li>
+								</ul>
+								<span class="spread-statement">展开</span>
+							</div>
+							<div class="classify-statement"><!-- 分类和声明 -->
+								<div class="classify-list"><!-- 分类列表 -->
+									<span class="classify-list-name">分类专栏：</span>
+									<p class="classify-list-value">九章算法面试题</p>
+									<p class="classify-list-value">技术资料</p>
+								</div>
+								<div class="statement-wrapper"><!-- 声明包装 -->
+									<p><span>版权声明：</span><span>本文为博主原创文章，转载请附上原文出处链接和本声明。</span></p>
+									<p><span>本文链接：</span><a href="https://blog.csdn.net/JiuZhang_ninechapter/article/details/104361693" target="_blank">https://blog.csdn.net/JiuZhang_ninechapter/article/details/104361693</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="blog-main-content"><!-- 博客主要内容 -->
+							
+						</div>
+						<div class="blog-bottom-user-infor-operation"><!-- 博客底部用户信息和操作 -->
+							<ul class="blog-bottom-operation">
+								<li class="give-like click-praise-wrapper article-content-thumb-up">
+									<span class="icon icon-thumbs-o-up icon-click-praise" style="margin-right: 7px;"></span>
+									<span class="text-icon">点赞</span>
+									<span class="click-praise-count great-number">1</span>
+									<!-- <a class="like-right-line like-line"></a> -->
+									<!-- <a class="like-left-line like-line"></a> -->
+								</li>
+								<li class="collect collect-wrapper collection-content">
+									<span class="icon icon-collect icon-star-o"></span>
+									<span class="text-icon">收藏</span>
+								</li>
+								<li class="transpond">
+									<span class="icon icon-share-square-o"></span>
+									<span class="text-icon">转发</span>
+								</li>
+							</ul>
+							<div class="blog-bottom-user-infor">
+								<p class="user-head-portrait wirter-head-portrait"></p>
+								<div class="blog-bottom-user-text-btn">
+									<div class="blog-bottom-user-text">
+										<p class="blog-user-infor"><span class="blog-user-infor-name">谷世杰</span><span class="blog-user-infor-title">博客CEO</span></p>
+										<p class="blog-user-dynamic-state"><span>发布了470 篇原创文章 · 获赞 1427 · 访问量 35万+</span></p>
+									</div>
+									<div class="blog-bottom-user-btn">
+										<span class="private-letter bg-white-bo-red">私信</span>
+										<span class="attention attention-btn bg-red-bo-red">关注</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="read-full-article">
+							<p id="unfold-read-full-article-btn">展开阅读全文<span class="icon icon-angle-down"></span></p>
+						</div>
+					</div>
+					<div class="blog-discuss-wrapper" id="blog-discuss-wrapper"><!-- 博客评论包装 -->
+						<div class="to-writer-saying" id="to-writer-saying"><!-- 对作者说点儿什么 -->
+							<div class="saying-area">
+								<p class="oneself-head-portrait"></p>
+								<textarea id="to-writer-saying-content" rows="3" cols="" placeholder="想对作者说点儿什么" maxlength="1000"></textarea>
+							</div>
+							<div class="saying-area-btn" unselecable="on" draggable="false" >
+								<span class="input-saying">还能输入<a class="input-char-count">1000</a>个字符</span>
+								<span class="cancel-reply say-btn bg-white-bo-red" id="published-cancel">取消发表</span>
+								<span class="publish-comment say-btn bg-red-bo-red" id="post-comment">发表评论</span>
+							</div>
+						</div>
+						<ul class="blog-user-comment" id="blog-user-comment">
+							
+						</ul>
+					</div>
+					<ul class="recommend-the-blog" id="recommend-the-blog"><!-- 推荐的博文 -->
+						<li>
+							<div class="recommend-the-blog-headline-pageview">
+								<p class="recommend-the-blog-headline" title="大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了">大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了</p>
+								<p class="recommend-the-blog-pageview">
+									<span class="blog-pageview-count">阅读数 27万+</span>
+									<span class="blog-issue-date">2020-02-29</span>
+								</p>
+							</div>
+							<div class="recommend-the-blog-content-writer">
+								<p class="recommend-the-blog-content">想让工资翻倍，就要不断学习，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上</p>
+								<p class="recommend-the-blog-writer-wrapper">
+									<span class="blog-text">博文</span>
+									<span class="from-writer">来自：</span>
+									<span class="recommend-the-blog-writer">谷世杰</span>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="recommend-the-blog-headline-pageview">
+								<p class="recommend-the-blog-headline" title="大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了">大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了</p>
+								<p class="recommend-the-blog-pageview">
+									<span class="blog-pageview-count">阅读数 27万+</span>
+									<span class="blog-issue-date">2020-02-29</span>
+								</p>
+							</div>
+							<div class="recommend-the-blog-content-writer">
+								<p class="recommend-the-blog-content">想让工资翻倍，就要不断学习，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上</p>
+								<p class="recommend-the-blog-writer-wrapper">
+									<span class="blog-text">博文</span>
+									<span class="from-writer">来自：</span>
+									<span class="recommend-the-blog-writer">谷世杰</span>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="recommend-the-blog-headline-pageview">
+								<p class="recommend-the-blog-headline" title="大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了">大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了</p>
+								<p class="recommend-the-blog-pageview">
+									<span class="blog-pageview-count">阅读数 27万+</span>
+									<span class="blog-issue-date">2020-02-29</span>
+								</p>
+							</div>
+							<div class="recommend-the-blog-content-writer">
+								<p class="recommend-the-blog-content">想让工资翻倍，就要不断学习，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上</p>
+								<p class="recommend-the-blog-writer-wrapper">
+									<span class="blog-text">博文</span>
+									<span class="from-writer">来自：</span>
+									<span class="recommend-the-blog-writer">谷世杰</span>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="recommend-the-blog-headline-pageview">
+								<p class="recommend-the-blog-headline" title="大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了">大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了</p>
+								<p class="recommend-the-blog-pageview">
+									<span class="blog-pageview-count">阅读数 27万+</span>
+									<span class="blog-issue-date">2020-02-29</span>
+								</p>
+							</div>
+							<div class="recommend-the-blog-content-writer">
+								<p class="recommend-the-blog-content">想让工资翻倍，就要不断学习，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上</p>
+								<p class="recommend-the-blog-writer-wrapper">
+									<span class="blog-text">博文</span>
+									<span class="from-writer">来自：</span>
+									<span class="recommend-the-blog-writer">谷世杰</span>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="recommend-the-blog-headline-pageview">
+								<p class="recommend-the-blog-headline" title="大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了">大学四年，我把私藏的自学「学习网站/实用工具」都贡献出来了</p>
+								<p class="recommend-the-blog-pageview">
+									<span class="blog-pageview-count">阅读数 27万+</span>
+									<span class="blog-issue-date">2020-02-29</span>
+								</p>
+							</div>
+							<div class="recommend-the-blog-content-writer">
+								<p class="recommend-the-blog-content">想让工资翻倍，就要不断学习，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上，不断进步，如果你现在还处于迷惘与彷徨中，那么你现在需要做的，就是去招聘网站上</p>
+								<p class="recommend-the-blog-writer-wrapper">
+									<span class="blog-text">博文</span>
+									<span class="from-writer">来自：</span>
+									<span class="recommend-the-blog-writer">谷世杰</span>
+								</p>
+							</div>
+						</li>
+						<div class="not-more-recommend">
+							<p class="not-more-recommend-text">没有更多推荐了，<span class="return-homepage" onclick="location.href='./HomePage.html'">返回首页</span></p>
+							<div class="bottom-skin-des">
+								<p><span>©️ 2019 Akebuss</span></p>
+								<p><span>皮肤主题: </span><span>程序猿惹谁了</span></p>
+								<p><span>设计师: </span><span>谷世杰</span></p>
+							</div>
+						</div>
+					</ul>
+				</div>
+				<div id="right_side_bar-wrapper" class="fixed-scroll-bug">
+					<ul id="right_side_bar"><!-- 右边侧边栏 -->
+						<li class="give-like article-content-thumb-up click-praise-wrapper hover-handle">
+							<span class="icon icon-thumbs-o-up icon-click-praise"></span>
+							<span class="text-icon">点赞</span>
+							<span class="click-praise-count text-count great-number">1</span>
+						</li>
+						<li class="collect collect-wrapper collection-content hover-handle">
+							<span class="icon icon-collect icon-star-o"></span>
+							<span class="text-icon">收藏</span>
+						</li>
+						<li class="transpond hover-handle">
+							<span class="icon icon-collect icon-share-square-o"></span>
+							<span class="text-icon">转发</span>
+						</li>
+						<li class="comment-btn hover-handle">
+							<span class="icon icon-collect icon-thumbs-o-up icon-chat-3"></span>
+							<span class="text-icon">评论</span>
+							<span class="comment-btn-count text-count comment-number">1</span>
+						</li>
+						<li class="report hover-handle">
+							<span class="report-text">举报</span>
+						</li>
+						<li class="return-header">
+							<span class="return-header-text">回到顶部</span>
+							<span class="icon icon-angle-up"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/Blog_for_page.js" type="text/javascript" charset="utf-8"></script>
